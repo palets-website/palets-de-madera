@@ -1,9 +1,9 @@
 {
-  "title": "7th sea 1st edition reference",
+  "title": "Palets de madera",
   "url": "https://example.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "Venta de palets de madera en España.",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Venta de palets de madera en España.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://example.com/"
