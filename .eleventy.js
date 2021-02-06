@@ -46,6 +46,7 @@ module.exports = function(eleventyConfig) {
             case "post":
             case "posts":
             case "palets":
+            case "madera":
               return false;
           }
 
@@ -62,8 +63,29 @@ module.exports = function(eleventyConfig) {
     return [...tagSet];
   });
 
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
+  const products = ['palets', 'madera']
+
+  products.forEach((name) => {
+    eleventyConfig.addCollection(name, function (collection) {
+      const folder = "./_src/" + name + "/*.md"
+      const byStartDate = (a, b) => {
+        if (a.data.date && b.data.date) { //todo: change to order ???
+          return a.data.date - b.data.date
+        }
+        return 0
+      }
+      return collection
+        .getFilteredByGlob(folder)
+        .sort(byStartDate)
+    })
+  })
+
+  eleventyConfig.addCollection("productos", function(collectionApi) {
+    return collectionApi.getFilteredByGlob(["_src/palets/*.md", "_src/madera/*.md"]);
+  });
+
+  eleventyConfig.addPassthroughCopy("_src/img");
+  eleventyConfig.addPassthroughCopy("_src/css");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({

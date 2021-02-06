@@ -19,11 +19,20 @@
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+      {% set navPages = collections.all | eleventyNavigation %}
+      {% macro renderNavListItem(entry) -%}
+        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}">
+          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+          {%- if entry.children.length -%}
+            <ul class="sub-nav">
+              {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endmacro %}
+
       <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
+        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
       </ul>
     </header>
 

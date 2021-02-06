@@ -1,0 +1,14 @@
+---
+layout: layouts/home.njk
+permalink: /palets/
+title: palets
+eleventyNavigation:
+  key: palets
+  parent: productos
+  order: 2
+---
+
+<h1>{{ palets }}</h1>
+
+{% set postslist = collections.palets %}
+{% include "postslist.njk" %}

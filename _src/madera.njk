@@ -1,0 +1,14 @@
+---
+layout: layouts/home.njk
+permalink: /madera/
+title: madera
+eleventyNavigation:
+  key: madera
+  parent: productos
+  order: 2
+---
+
+<h1>{{ madera }}</h1>
+
+{% set postslist = collections.madera %}
+{% include "postslist.njk" %}
