@@ -29,7 +29,6 @@ module.exports = function(eleventyConfig) {
     if( n < 0 ) {
       return array.slice(n);
     }
-
     return array.slice(0, n);
   });
 
@@ -46,6 +45,7 @@ module.exports = function(eleventyConfig) {
             case "nav":
             case "post":
             case "posts":
+            case "palets":
               return false;
           }
 

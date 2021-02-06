@@ -7,7 +7,8 @@
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "debug-o": "DEBUG=* eleventy",
+    "debug": "DEBUG=Eleventy* & eleventy"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,8 @@
     "luxon": "^1.21.3",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5"
+  },
+  "dependencies": {
+    "debug": "^4.3.1"
   }
 }
