@@ -4,7 +4,11 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
+{#<pre>#}
+{#{%- for item in collections.madera  -%}#}
+{#  {{ item.data.collections | console }}#}
+{#{%- endfor -%}#}
+{#</pre>#}
 <h1>Latest 3 Posts</h1>
 
 {% set postslist = collections.productos | head(-3) %}

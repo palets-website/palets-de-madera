@@ -1,17 +1,42 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginSass = require("eleventy-plugin-sass");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
+const util = require('util'); // for debug output "console" filter only // for debug output "console" filter only
+
+
+const sassPluginOptions = {
+  watch: ['_src/**/*.{scss,sass}', '!node_modules/**'],
+  sourcemaps: true,
+  cleanCSS: true,
+  cleanCSSOptions: {},
+  autoprefixer: [
+    "last 2 version",
+    "> 1%",
+    "IE 11"
+  ],
+  outputDir: '_site',
+  remap: false
+};
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginSass, sassPluginOptions);
 
   eleventyConfig.setDataDeepMerge(true);
+
+  // filter for debugging:
+  eleventyConfig.addFilter('console', function(value) {
+    return util.inspect(value);
+  });
 
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
@@ -85,7 +110,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("_src/img");
-  eleventyConfig.addPassthroughCopy("_src/css");
+  // eleventyConfig.addPassthroughCopy("_src/css");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
