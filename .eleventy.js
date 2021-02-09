@@ -6,7 +6,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+// const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const util = require('util'); // for debug output "console" filter only // for debug output "console" filter only
 
@@ -27,7 +27,7 @@ const sassPluginOptions = {
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  // eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginSass, sassPluginOptions);
 
@@ -110,6 +110,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("_src/img");
+  eleventyConfig.addPassthroughCopy("_src/fonts");
   // eleventyConfig.addPassthroughCopy("_src/css");
 
   /* Markdown Overrides */
