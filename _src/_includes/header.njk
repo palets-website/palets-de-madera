@@ -1,0 +1,26 @@
+<header>
+  <p class="contacts">
+    <span class="contacts__phone"><a href="#" class="contacts__phone-link">698 99 90 92</a></span>
+    <span class="contacts__phone"><a href="#" class="contacts__phone-link">698 99 90 92</a></span>
+    <span class="contacts__email"><a href="#" class="contacts__email-link">ejemplo@gmail.com</a></span>
+  </p>
+  <nav class="navigation">
+    <div class="home-link"><a href="{{ '/' | url }}"><img src="" alt="{{ metadata.title }}"></a></div>
+
+    {% set navPages = collections.all | eleventyNavigation %}
+    {% macro renderNavListItem(entry) -%}
+      <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}">
+        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        {%- if entry.children.length -%}
+          <ul class="sub-nav">
+            {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endmacro %}
+
+    <ul class="nav">
+      {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+    </ul>
+  </nav>
+</header>
