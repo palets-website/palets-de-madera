@@ -1,0 +1,14 @@
+{
+  "filial_1": {
+    "city": "Marbella",
+    "email": "ejemplo@gmail.com",
+    "phone": "+34 (698) 99-09-01",
+    "address": "Camino del Ángel,109, Bloque 3, 1 29604 , Nueva Andalucía , Marbella , Málaga ( España)"
+  },
+  "filial_2": {
+    "city": "Marbella",
+    "email": "ejemplo@gmail.com",
+    "phone": "698 22 22 22",
+    "address": "Camino del Ángel,109, Bloque 3, 1 29604 , Nueva Andalucía , Marbella , Málaga ( España)"
+  }
+}
