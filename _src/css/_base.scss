@@ -37,14 +37,8 @@ a {
   color: $blue;
   transition: all .3s ease-out;
 }
-a[href]:visited {
+a[href]:visited:not([class]) {
   color: $navy;
-}
-main {
-  padding: 1rem;
-}
-main :first-child {
-  margin-top: 0;
 }
 
 table {

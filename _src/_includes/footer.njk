@@ -1,7 +1,6 @@
 <footer class="footer">
   <h2 class="visually-hidden">{{ titles.addresses }}</h2>
-  <div class="footer__top">
-    <div class="container">
+  <div class="footer__top container">
       <section class="footer__block">
         <h3 class="footer__title">{{ contacts.filial_1.city }}</h3>
         <ul class="footer__list">
@@ -44,7 +43,7 @@
         {% set navPages = collections.all | eleventyNavigation %}
         {% macro renderNavListItem(entry) -%}
           <li class="footer__list --nav-item{% if entry.url == page.url %} --nav-item-active{% endif %}">
-            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+            <a class="footer__link href="{{ entry.url | url }}">{{ entry.title }}</a>
             {%- if entry.children.length -%}
               <ul class="footer__list --sub-nav">
                 {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
@@ -57,13 +56,11 @@
           {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
         </ul>
       </section>
-    </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <a href="" class="copyright">{{ metadata.title }} &copy;{{ build.timestamp }}</a>
-        <a href="https://elkin.dev" class="development" target="_blank">developed by Elkin.dev</a>
-      </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <a href="" class="footer__copyright">{{ metadata.title }} &copy;{{ build.timestamp }}</a>
+      <a href="https://elkin.dev" class="footer__development" target="_blank">developed by Elkin.dev</a>
     </div>
   </div>
-
 </footer>
