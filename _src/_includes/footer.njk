@@ -16,7 +16,7 @@
             </a>
           </li>
           <li class="footer__item">{{ contacts.filial_1.address }}</li>
-          <li class="footer__item">{{ contacts.filial_1.city }}</li>
+{#          <li class="footer__item">{{ contacts.filial_1.city }}</li>#}
         </ul>
       </section>
       <section class="footer__block">
@@ -34,7 +34,7 @@
             </a>
           </li>
           <li class="footer__item">{{ contacts.filial_2.address }}</li>
-          <li class="footer__item">{{ contacts.filial_2.city }}</li>
+{#          <li class="footer__item">{{ contacts.filial_2.city }}</li>#}
         </ul>
       </section>
       <section class="footer__block">
@@ -42,8 +42,8 @@
 
         {% set navPages = collections.all | eleventyNavigation %}
         {% macro renderNavListItem(entry) -%}
-          <li class="footer__list --nav-item{% if entry.url == page.url %} --nav-item-active{% endif %}">
-            <a class="footer__link href="{{ entry.url | url }}">{{ entry.title }}</a>
+          <li class="footer__item --nav-item">
+            <a class="footer__link{% if entry.url == page.url %} --active{% endif %}" href="{{ entry.url | url }}">{{ entry.title }}</a>
             {%- if entry.children.length -%}
               <ul class="footer__list --sub-nav">
                 {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}

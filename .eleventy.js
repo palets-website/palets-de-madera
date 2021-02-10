@@ -111,6 +111,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("_src/js");
   eleventyConfig.addPassthroughCopy("_src/img");
+  eleventyConfig.addPassthroughCopy("./favicon.ico");
   eleventyConfig.addPassthroughCopy("_src/fonts");
   // eleventyConfig.addPassthroughCopy("_src/css");
 

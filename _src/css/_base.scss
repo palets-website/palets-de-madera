@@ -1,13 +1,11 @@
-@include font-face(montserrat, '../fonts/Montserrat-Regular', 400, normal, woff2 woff);
-@include font-face(Roboto, '../fonts/Roboto-Regular', 400, normal, woff2 woff);
-@include font-face(Roboto, '../fonts/Roboto-Italic', 400, italic, woff2 woff);
-@include font-face(Roboto, '../fonts/Roboto-Bold', 700, normal, woff2 woff);
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
 html,
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   min-width: 320px;
   padding: 0;
   margin: 0;

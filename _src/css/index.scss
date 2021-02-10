@@ -2,11 +2,13 @@
 @import "mixins/_media-mixin";
 @import "mixins/_material-bx-shadows-mixin";
 
-@import "vars";
+@import "utility/vars";
+@import "utility/grid";
+@import "utility/_material-bx-shadows-classes";
 
-
+@import "fonts";
 @import "base";
-@import "grid";
+
 @import "header";
 @import "page";
 @import "footer";
