@@ -1,0 +1,241 @@
+.contacts{
+  margin: 0;
+  background-color: $color-bg;
+  &__wrap{
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+  }
+  &__item{
+    display: block;
+    margin-right: 2em;
+    &.--right{
+      margin-left: auto;
+      margin-right: 0;
+    }
+    &.--secondary{
+      display: none;
+      @include media(md){
+        display: block;
+      }
+    }
+  }
+  &__link{
+    position: relative;
+    display: block;
+    padding: 10px 16px;
+    color: $color-accent-light;
+    text-decoration: none;
+    line-height: 19px;
+    vertical-align: middle;
+    transition: all .3s ease-out;
+    &.--phone::before{
+      content: '';
+      display: inline-block;
+      margin-right: .3rem;
+      width: 18px;
+      height: 19px;
+      line-height: 19px;
+      vertical-align: bottom;
+      background-image: url(../img/ico-phone.svg);
+    }
+    &.--email::before{
+      content: '';
+      display: inline-block;
+      margin-right: .3rem;
+      width: 18px;
+      height: 15px;
+      line-height: 19px;
+      vertical-align: middle;
+      background-image: url(../img/ico-email.svg);
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      bottom: 4px;
+      left: 16px;
+      transition: all .3s ease-out;
+    }
+    &[href]:hover::after{
+      width: calc(100% - 32px);
+    }
+    &[href]:active{
+      opacity: .7;
+    }
+  }
+}
+.menu-opener{
+  display: block;
+  min-height: 32px;
+  margin-left: auto;
+  margin-right: 16px;
+  padding: 7px 8px 7px 37px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-accent-light;
+  background-color: transparent;
+  border: 1px solid $color-accent-light;
+  border-radius: 3px;
+  background-image: url(../img/burger.svg);
+  background-repeat: no-repeat;
+  background-position: 6px center;
+  @include media(sm){
+    display: none;
+  }
+}
+.home-link{
+  display: none;
+  @include media(sm){
+    display: block;
+    padding: 9px 16px;
+    &:hover{
+      opacity: .7;
+    }
+    &__img{
+      display: block;
+    }
+  }
+}
+
+// ==== navigation =====
+
+//for mobile menu script styles:
+body.--fixed{
+  overflow: hidden;
+}
+
+.navigation{
+  display: none;
+  &.--no-js{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (max-width: $sm) {
+    &.--open{
+      display: block;
+      position: fixed;
+      top: 47px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+      background-color: rgba($color-text, 0.6);
+      animation-name: opacity;
+      animation-duration: .3s;
+      .nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        min-width: 60%;
+        display: block;
+        overflow-y: auto;
+        background-color: #fff;
+        animation-name: openMenu;
+        animation-duration: .6s;
+      }
+    }
+  }
+  @include media(sm){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+/* Nav */
+.nav {
+  display: block;
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  @include media(sm){
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  &__item{
+    padding: 3px 16px;
+    margin: 0;
+    @include media(sm){
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      &+&{
+        margin-left: 8px;
+      }
+    }
+  }
+  &__link{
+    //font-size: 14px;
+    //line-height: 16px;
+    position: relative;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-text;
+    @include media(sm){
+      padding: 3px 16px;
+    }
+    &.--active{
+      font-weight: bold;
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      bottom: 0;
+      left: 16px;
+      transition: all .3s ease-out;
+    }
+    &[href]:hover::after{
+      width: calc(100% - 32px);;
+    }
+    &[href]:active{
+      opacity: .7;
+    }
+
+  }
+  &__sub-nav{
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include media(sm){
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include media(lg){
+      display: none;
+    }
+  }
+}
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+  text-decoration: none;
+}
+.nav-item-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@keyframes opacity {
+  0% { background-color: rgba($color-text, 0); }
+  100% { background-color: rgba($color-text, 0.6); }
+}
+
+@keyframes openMenu {
+  0% { transform: translateX(-105%) }
+  100% { transform: translateX(0) }
+}

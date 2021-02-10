@@ -109,6 +109,7 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob(["_src/palets/*.md", "_src/madera/*.md"]);
   });
 
+  eleventyConfig.addPassthroughCopy("_src/js");
   eleventyConfig.addPassthroughCopy("_src/img");
   eleventyConfig.addPassthroughCopy("_src/fonts");
   // eleventyConfig.addPassthroughCopy("_src/css");

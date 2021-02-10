@@ -11,20 +11,20 @@ eleventyNavigation:
 {#</pre>#}
 <h1>Latest 3 Posts</h1>
 
-{% set postslist = collections.productos | head(-3) %}
-{% set postslistCounter = collections.productos | length %}
-{% include "postslist.njk" %}
+{#{% set postslist = collections.productos | head(-3) %}#}
+{#{% set postslistCounter = collections.productos | length %}#}
+{#{% include "postslist.njk" %}#}
 
-<p>More posts can be found in <a href="{{ '/productos/' | url }}">todos productos</a>.</p>
+{#<p>More posts can be found in <a href="{{ '/productos/' | url }}">todos productos</a>.</p>#}
 
-{% set postslist = collections.palets | head(-3) %}
-{% set postslistCounter = collections.palets | length %}
-{% include "postslist.njk" %}
+{#{% set postslist = collections.palets | head(-3) %}#}
+{#{% set postslistCounter = collections.palets | length %}#}
+{#{% include "postslist.njk" %}#}
 
-<p>More posts can be found in <a href="{{ '/palets/' | url }}">todos palets</a>.</p>
+{#<p>More posts can be found in <a href="{{ '/palets/' | url }}">todos palets</a>.</p>#}
 
-{% set postslist = collections.madera | head(-3) %}
-{% set postslistCounter = collections.madera | length %}
-{% include "postslist.njk" %}
+{#{% set postslist = collections.madera | head(-3) %}#}
+{#{% set postslistCounter = collections.madera | length %}#}
+{#{% include "postslist.njk" %}#}
 
 <p>More posts can be found in <a href="{{ '/madera/' | url }}">todos madera</a>.</p>
