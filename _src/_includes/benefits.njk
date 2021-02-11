@@ -1,0 +1,17 @@
+<ul class="features" >
+{#  {{ features | console }}#}
+  {% for item in features %}
+
+    {{ item | console }}
+
+    <li class="features__item">
+      <h3 class="features__title">{{features.title}}</h3>
+      <p class="features__subtitle">
+        {{ features.subtitle }}
+      </p>
+      <p class="features__text">
+        {{ features.text }}
+      </p>
+    </li>
+  {% endfor %}
+</ul>

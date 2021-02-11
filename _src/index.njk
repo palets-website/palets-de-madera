@@ -11,31 +11,30 @@ eleventyNavigation:
 {#</pre>#}
 <header class="page__title-block container">
   <h1 class="page__title">Latest 3 Posts</h1>
-  <a href="{{ '/productos/' | url }}" class="page__cta-button">
+  <a href="{{ '/productos/' | url }}" class="page__cta-button button --accent">
     Ver productos
   </a>
 </header>
-<article class="page__content container">
-  <br>
+<section class="page__content container">
+  <h2 class="visually-hidden">{{ benefits }}</h2>
+
   {% set postslist = collections.productos | head(-3) %}
-  {% set postslistCounter = collections.productos | length %}
-  {% include "postslist.njk" %}
+    {% set postslistCounter = collections.productos | length %}
+    {% include "postslist.njk" %}
 
-  <p>More posts can be found in <a href="{{ '/productos/' | url }}">todos productos</a>.</p>
+{#  {% set features = features %}#}
+{#  {% set postslist = collections.productos | head(-3) %}#}
+  {% set features = features  %}
+  {% include "benefits.njk" %}
 
-  {% set postslist = collections.palets | head(-3) %}
-  {% set postslistCounter = collections.palets | length %}
-  {% include "postslist.njk" %}
+   <a href="{{ '/productos/' | url }}">todos productos</a>
 
-  <p>More posts can be found in <a href="{{ '/palets/' | url }}">todos palets</a>.</p>
 
-  {% set postslist = collections.madera | head(-3) %}
-  {% set postslistCounter = collections.madera | length %}
-  {% include "postslist.njk" %}
-  <p>More posts can be found in <a href="{{ '/madera/' | url }}">todos madera</a>.</p>
-  <br>
 
-</article>
+</section>
+<section class="page__products --accent-bg">
+
+</section>
 
 
 

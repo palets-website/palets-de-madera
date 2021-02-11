@@ -1,0 +1,17 @@
+{
+  "feature1": {
+    "title": "title",
+    "subtitle": "subtitle",
+    "text": "lorem5"
+  },
+  "feature2": {
+    "title": "title2",
+    "subtitle": "subtitle2",
+    "text": "lorem55"
+  },
+  "feature3": {
+    "title": "title3",
+    "subtitle": "subtitledds",
+    "text": "lorem15"
+  }
+}
