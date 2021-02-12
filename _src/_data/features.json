@@ -1,17 +1,17 @@
-{
-  "feature1": {
-    "title": "title",
-    "subtitle": "subtitle",
-    "text": "lorem5"
+[
+  {
+    "title": "Fabricación de palets",
+    "subtitle": "",
+    "text": "Realizamos fabricación palets de madera de diferentes tipos y dimensiones. Todos los palets fabricados cumplen las normas legales"
   },
-  "feature2": {
-    "title": "title2",
-    "subtitle": "subtitle2",
-    "text": "lorem55"
+  {
+    "title": "Compra-Venta de palets",
+    "subtitle": "",
+    "text": "Realizamos la compra de palets usados para su posterior venta, los palets se venden totalmente revisados y reparados, realizamos recogida de palets en su empresa."
   },
-  "feature3": {
-    "title": "title3",
-    "subtitle": "subtitledds",
-    "text": "lorem15"
+  {
+    "title": "Reparación de palets",
+    "subtitle": "",
+    "text": "Realizamos clasificación, reparación y renovación de palets de madera. Nos desplazamos a su empresa para evaluar los trabajos a realizar."
   }
-}
+]

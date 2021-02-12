@@ -16,23 +16,29 @@ eleventyNavigation:
   </a>
 </header>
 <section class="page__content container">
-  <h2 class="visually-hidden">{{ benefits }}</h2>
+  <h2 class="visually-hidden">{{ titles.benefits }}</h2>
 
-  {% set postslist = collections.productos | head(-3) %}
-    {% set postslistCounter = collections.productos | length %}
-    {% include "postslist.njk" %}
-
-{#  {% set features = features %}#}
-{#  {% set postslist = collections.productos | head(-3) %}#}
-  {% set features = features  %}
   {% include "benefits.njk" %}
 
-   <a href="{{ '/productos/' | url }}">todos productos</a>
+  <h2 class="page__sub-title">{{ metadata.description }}</h2>
 
+  <article class="page__site-description">
+    {{ metadata.longdescription }} {# todo: пеерместить в .md #}
+  </article>
 
 
 </section>
-<section class="page__products --accent-bg">
+<section class="page__content --accent-bg --wide">
+  <div class="container">
+    <h2 class="page__sub-title">{{ titles.products }}</h2>
+
+    {% set prodlist = collections.mejor | head(-3) %}
+    {#  {% set postslistCounter = collections.productos | length %}#}
+    {% include "prodlist.njk" %}
+
+    <a class="page__center-button button" href="{{ '/productos/' | url }}">todos productos</a>
+  </div>
+
 
 </section>
 

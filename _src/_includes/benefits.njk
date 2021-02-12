@@ -1,16 +1,14 @@
 <ul class="features" >
-{#  {{ features | console }}#}
   {% for item in features %}
-
-    {{ item | console }}
-
     <li class="features__item">
-      <h3 class="features__title">{{features.title}}</h3>
+      <h3 class="features__title">{{item.title}}</h3>
+      {%- if item.subtitle -%}
       <p class="features__subtitle">
-        {{ features.subtitle }}
+        {{ item.subtitle }}
       </p>
+      {%- endif -%}
       <p class="features__text">
-        {{ features.text }}
+        {{ item.text }}
       </p>
     </li>
   {% endfor %}

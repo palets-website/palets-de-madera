@@ -1,0 +1,23 @@
+<ol reversed class="prodlist" >
+{% for product in prodlist | reverse %}
+
+{#  {% set isPalets = collections.palets | getCollectionItem(product) %}#}
+{#  {% set isMadera = collections.madera | getCollectionItem(product) %}#}
+
+  <li class="prodlist__item">
+    {% if isPalets %} I am Palets {% endif %}
+    {% if isMadera %} I am Madera {% endif %}
+    <a href="{{ product.url | url }}" class="prodlist__link">{% if product.data.title %}{{ product.data.title }}{% else %}<code>{{ product.url }}</code>{% endif %}</a>
+    {% for tag in product.data.tags %}
+      {%- if collections.tagList.indexOf(tag) != -1 -%}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="prodlist-tag">{{ tag }}</a>
+      {%- endif -%}
+    {% endfor %}
+  </li>
+{% endfor %}
+</ol>
+
+{# example: #}
+{#{% set prodlist = collections.productos | head(-3) %}#}
+{#  {% include "prodlist.njk" %}#}

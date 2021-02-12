@@ -64,9 +64,32 @@
   }
   &__content{
     padding-top: 75px;
+    padding-bottom: 90px;
     background-color: $color-white;
     border-radius: 3px 3px 0 0;
     @include BoxShadow(8);
-
+    &.--accent-bg{
+      background-color: $color-bg-lighten;
+    }
+    &.--wide{
+      @include BoxShadow(0);
+    }
   }
+  &__sub-title,
+  &__content h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: $color-bg;
+  }
+  &__site-description{
+    text-align: center;
+  }
+  &__center-button{
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+  }
+  &__{}
 }

@@ -1,9 +1,9 @@
 ---
 layout: layouts/post.njk
-title: About us
+title: Contacto
 templateClass: tmpl-post
 eleventyNavigation:
-  key: About us
+  key: Contacto
   order: 3
 ---
 

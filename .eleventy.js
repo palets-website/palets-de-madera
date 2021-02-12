@@ -4,8 +4,8 @@ const pluginSass = require("eleventy-plugin-sass");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
-
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 // const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const util = require('util'); // for debug output "console" filter only // for debug output "console" filter only
