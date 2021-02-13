@@ -5,14 +5,35 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const Image = require("@11ty/eleventy-img");
 
 // const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const util = require('util'); // for debug output "console" filter only // for debug output "console" filter only
 
 
+
+async function imageShortcode(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [300, 600],
+    formats: ["avif", "webp", "jpeg"],
+    urlPath: "/palets-de-madera/img/",
+    outputDir: "./_site/img",
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
 const sassPluginOptions = {
-  watch: ['_src/**/*.{scss,sass}', '!node_modules/**'],
+  watch: ['src/**/*.{scss,sass}', '!node_modules/**'],
   sourcemaps: true,
   cleanCSS: true,
   cleanCSSOptions: {},
@@ -32,6 +53,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSass, sassPluginOptions);
 
   eleventyConfig.setDataDeepMerge(true);
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  // eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   // filter for debugging:
   eleventyConfig.addFilter('console', function(value) {
@@ -92,7 +117,7 @@ module.exports = function(eleventyConfig) {
 
   products.forEach((name) => {
     eleventyConfig.addCollection(name, function (collection) {
-      const folder = "./_src/" + name + "/*.md"
+      const folder = "./src/" + name + "/*.md"
       const byStartDate = (a, b) => {
         if (a.data.date && b.data.date) { //todo: change to order ???
           return a.data.date - b.data.date
@@ -106,14 +131,14 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addCollection("productos", function(collectionApi) {
-    return collectionApi.getFilteredByGlob(["_src/palets/*.md", "_src/madera/*.md"]);
+    return collectionApi.getFilteredByGlob(["src/palets/*.md", "src/madera/*.md"]);
   });
 
-  eleventyConfig.addPassthroughCopy("_src/js");
-  eleventyConfig.addPassthroughCopy("_src/img");
+  eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("./favicon.ico");
-  eleventyConfig.addPassthroughCopy("_src/fonts");
-  // eleventyConfig.addPassthroughCopy("_src/css");
+  eleventyConfig.addPassthroughCopy("src/fonts");
+  // eleventyConfig.addPassthroughCopy("src/css");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
@@ -171,7 +196,7 @@ module.exports = function(eleventyConfig) {
 
     // These are all optional, defaults are shown:
     dir: {
-      input: "_src",
+      input: "src",
       includes: "_includes",
       data: "_data",
       output: "_site"

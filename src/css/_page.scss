@@ -24,11 +24,11 @@
       linear-gradient(to bottom, lighten($color-bg-dark, 10) 300px, $color-white 600px);
   }
   &__title-block{
-    min-height: 320px;
+    //min-height: 320px;
     padding-top: 1rem;
     text-align: center;
     @include media(md){
-      min-height: 350px;
+      //min-height: 350px;
     }
   }
   &__title{
@@ -89,6 +89,7 @@
   &__center-button{
     display: block;
     margin: 0 auto;
+    margin-top: 70px;
     width: max-content;
   }
   &__{}

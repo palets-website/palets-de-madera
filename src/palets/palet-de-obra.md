@@ -13,6 +13,7 @@ board: 7
 traverse: 4
 enters: 2
 date: 2021-02-01
+img: src/img/products/palet-de-obra.jpg
 ---
 
 Pallet de obra reversible, hecho de madera con certificación NIMF 15 (ISPM 15), disponible en Manises , Valencia.

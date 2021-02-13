@@ -12,5 +12,6 @@ tags:
   - mejor
 layout: layouts/post.njk
 date: 2020-09-01
+img: src/img/products/europalette-diagonal.jpg
 ---
 Roble 3 cm grueso largo desde 2 hasta 4;40 metro ancho desde 10 hasta 60 cm- Actualmente se encuentra en nuestro almacén de Málaga

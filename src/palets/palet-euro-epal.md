@@ -14,11 +14,12 @@ board: 8
 traverse: 3
 enters: 4
 date: 2021-02-04
+img: src/img/products/europalette-diagonal.jpg
 ---
 
 El palet EPAL Europe es una herramienta imprescindible en el sector logístico: es el palet intercambiable más utilizado en todo el mundo, y especialmente en Europa. Actualmente hay en circulación entre 450 y 500 millones de unidades.
 
-Los palets de EPAL Europe son fiables sin fronteras
-Los palés EPAL Europe garantizan el buen recorrido de las mercancías.
-Los palés EPAL Europe proporcionan una superficie de almacenamiento estable para las mercancías.
-Los palets EPAL Europe son de alta calidad, para la máxima seguridad en el trabajo.
+- Los palets de EPAL Europe son fiables sin fronteras
+- Los palés EPAL Europe garantizan el buen recorrido de las mercancías.
+- Los palés EPAL Europe proporcionan una superficie de almacenamiento estable para las mercancías.
+- Los palets EPAL Europe son de alta calidad, para la máxima seguridad en el trabajo.

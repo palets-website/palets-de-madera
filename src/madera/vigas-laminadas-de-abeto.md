@@ -11,6 +11,7 @@ tags:
   - mejor
 layout: layouts/post.njk
 date: 2020-09-01
+img: src/img/products/europalette-diagonal.jpg
 ---
 
 Vigas laminadas de abeto (todas vienen con el largo 11,86 m) con varias medidas :

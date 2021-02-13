@@ -9,8 +9,8 @@ eleventyNavigation:
 {#  {{ item.data.collections | console }}#}
 {#{%- endfor -%}#}
 {#</pre>#}
-<header class="page__title-block container">
-  <h1 class="page__title">Latest 3 Posts</h1>
+<header class="page__title-block container --homepage">
+  <h1 class="page__title">{{ metadata.title }}</h1>
   <a href="{{ '/productos/' | url }}" class="page__cta-button button --accent">
     Ver productos
   </a>
@@ -33,7 +33,6 @@ eleventyNavigation:
     <h2 class="page__sub-title">{{ titles.products }}</h2>
 
     {% set prodlist = collections.mejor | head(-3) %}
-    {#  {% set postslistCounter = collections.productos | length %}#}
     {% include "prodlist.njk" %}
 
     <a class="page__center-button button" href="{{ '/productos/' | url }}">todos productos</a>
