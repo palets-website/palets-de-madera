@@ -9,9 +9,16 @@
 {#    {% if isPalets %} I am Palets {% endif %}#}
 {#    {% if isMadera %} I am Madera {% endif %}#}
     <a href="{{ product.url | url }}" class="prodlist__link">
-      {% image product.data.img , "photo of my cat", "300px"  %}
+          {% if product.data.img %}
+            {% image product.data.img, product.data.description, "300px"  %}
+          {% else %}
+            <img src="{{ '/img/logo-bw.svg' | url }}", alt="{{ product.data.description }}" width="300" height="300" >
+          {% endif %}
+
     </a>
-    <h3 class="prodlist__title">{{ product.data.title }}</h3>
+    <a href="{{ product.url | url }}" class="prodlist__title-link">
+      <h3 class="prodlist__title">{{ product.data.title }}</h3>
+    </a>
     {% if product.data.height %}
     <p class="prodlist__attribute">{{ product.data.width }}x{{ product.data.height }}</p>
     {% endif %}

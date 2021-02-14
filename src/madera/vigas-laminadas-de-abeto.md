@@ -1,17 +1,30 @@
 ---
 title: Vigas laminadas de abeto
 description: Vigas laminadas de abeto (todas vienen con el largo 11,86 m) con varias medidas
-price: Pregunta por el precio
+
+tipo: Tablones Canteados en un Lado
+uso:
 woodtype: Madera blanda europea
 wood: Abeto (Abies alba)
-volume: 5 - 50 m3 Punto – 1 vez
+
+volumen: 5 - 50 m3 Punto – 1 vez
+height:
 thickness: 16 - 32 cm
+width:
 length: 1186 cm
+system: normas europeas
+calidad: B 1
+desecado: secado en secadero (KD)
+
+price: Pregunta por el precio
+fechaDeEntrega:
+vendePara: España
+
 tags:
   - mejor
 layout: layouts/post.njk
 date: 2020-09-01
-img: src/img/products/europalette-diagonal.jpg
+img: https://images.fordaq.com/p-18120000-18114000-4/Vigas-laminadas-de.jpg
 ---
 
 Vigas laminadas de abeto (todas vienen con el largo 11,86 m) con varias medidas :

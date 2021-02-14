@@ -92,5 +92,20 @@
     margin-top: 70px;
     width: max-content;
   }
-  &__{}
+  &__pre-nav{
+    margin-top: 3rem;
+  }
+  &__nav{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    &-next{
+      margin-left: auto;
+    }
+    &-prev{
+      margin-right: auto;
+    }
+  }
 }

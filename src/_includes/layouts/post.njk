@@ -8,11 +8,56 @@ templateClass: tmpl-post
 </header>
 
 <article class="page__content container">
+  <div class="product">
+    <div class="product__img">
+      {% image img, description, "600px"  %}
+    </div>
+    <div class="product__attributes">
+      <section class="attribute">
+        <h2 class="attribute__title">Producto</h2>
+        <dl class="attribute__list">
+          {% if description %}<dd>Descripción: </dd><dt>{{ description }}</dt>{% endif %}
+          {% if tipo %}<dd>Tipo: </dd><dt>{{ tipo }}</dt>{% endif %}
+          {% if uso %}<dd>Uso: </dd><dt>{{ uso }}</dt>{% endif %}
+          {% if woodtype %}<dd>Tipo de especies: </dd><dt>{{ woodtype }}</dt>{% endif %}
+          {% if wood %}<dd>Especie: </dd><dt>{{ wood }}</dt>{% endif %}
+          {% if condicion %}<dd>Condición: </dd><dt>{{ condicion }}</dt>{% endif %}
+          {% if region %}<dd>Región: </dd><dt>{{ region }}</dt>{% endif %}
+        </dl>
+      </section>
+      <section class="attribute">
+        <h2 class="attribute__title">Especificaciones</h2>
+        <dl class="attribute__list">
+          {% if volumen %}<dd>Volumen: </dd><dt>{{ volumen }}</dt>{% endif %}
+          {% if height %}<dd>Altura: </dd><dt>{{ height }}</dt>{% endif %}
+          {% if thickness %}<dd>Grosor: </dd><dt>{{ thickness }}</dt>{% endif %}
+          {% if width %}<dd>Ancho: </dd><dt>{{ width }}</dt>{% endif %}
+          {% if length %}<dd>Largo: </dd><dt>{{ length }}</dt>{% endif %}
+          {% if mark %}<dd>Marca de tratamiento: </dd><dt>{{ mark }}</dt>{% endif %}
+          {% if board %}<dd>Número de tablas de capa superior: </dd><dt>{{ board }}</dt>{% endif %}
+          {% if traverse %}<dd>Número de tablas transversales: </dd><dt>{{ traverse }}</dt>{% endif %}
+          {% if system %}<dd>Sistema de evaluación: </dd><dt>{{ system }}</dt>{% endif %}
+          {% if calidad %}<dd>Calidad: </dd><dt>{{ calidad }}</dt>{% endif %}
+          {% if certificacion %}<dd>Certificación: </dd><dt>{{ certificacion }}</dt>{% endif %}
+          {% if desecado %}<dd>Desecado: </dd><dt>{{ desecado }}</dt>{% endif %}
+        </dl>
+      </section>
+      <section class="attribute">
+        <h2 class="attribute__title">Precio & Condiciones</h2>
+        <dl class="attribute__list">
+          {% if price %}<dd class="price">Price: </dd><dt class="price price--amount">{{ price }}</dt>{% endif %}
+          {% if incoterm %}<dd class="price">Incoterm: </dd><dt class="price price--amount">{{ incoterm }}</dt>{% endif %}
+          {% if fechaDeEntrega %}<dd>Fecha de entrega: </dd><dt>{{ fechaDeEntrega }}</dt>{% endif %}
+          {% if vendePara %}<dd>Vende para: </dd><dt>{{ vendePara }}</dt>{% endif %}
+        </dl>
+      </section>
+    </div>
+
+  </div>
+
   {{ content | safe }}
 
 
-  <hr>
-  <ul>
       {% set isPalets = collections.palets | getCollectionItem(page) %}
       {% set isMadera = collections.madera | getCollectionItem(page) %}
 {#      {% set isPost = collections.post | getCollectionItem(page) %}#}
@@ -25,16 +70,14 @@ templateClass: tmpl-post
 {#        {%- set tag = "posts" %}#}
       {% endif %}
 
-{#    <pre>#}
-{#      {{ page | console }}#}
-{#    </pre>#}
-
-
-    {% if isPalets %}
-      {%- set nextPost = collections[ tag ] | getNextCollectionItem(page) %}
-      {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-      {%- set previousPost = collections[ tag ] | getPreviousCollectionItem(page) %}
-      {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+    {% if tag %}
+      <hr class="page__pre-nav">
+      <ul class="page__nav">
+        {%- set nextPost = collections[ tag ] | getNextCollectionItem(page) %}
+        {%- if nextPost %}<li class="page__nav-next">Siguiente: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+        {%- set previousPost = collections[ tag ] | getPreviousCollectionItem(page) %}
+        {%- if previousPost %}<li class="page__nav-prev">Anterior: <a  href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+      </ul>
     {% endif %}
-  </ul>
+
 </article>

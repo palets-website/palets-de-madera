@@ -55,7 +55,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  // eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   // filter for debugging:

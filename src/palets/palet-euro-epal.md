@@ -23,3 +23,5 @@ El palet EPAL Europe es una herramienta imprescindible en el sector logístico: 
 - Los palés EPAL Europe garantizan el buen recorrido de las mercancías.
 - Los palés EPAL Europe proporcionan una superficie de almacenamiento estable para las mercancías.
 - Los palets EPAL Europe son de alta calidad, para la máxima seguridad en el trabajo.
+
+{% image img, description, "300px"  %}
