@@ -109,3 +109,29 @@
     }
   }
 }
+
+.contact{
+  &__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__address-block-wrapper{
+    display: flex;
+  }
+  &__address-block-wrapper.--revers{
+    flex-direction: row-reverse;
+  }
+  &__address-block{
+    position: relative;
+    max-width: 400px;
+    margin: 2em;
+    margin-bottom: -2em;
+    padding: 2em;
+    background-color: $color-white;
+    border-radius: 3px;
+    @include BoxShadow(4);
+    z-index: 1;
+  }
+
+}
