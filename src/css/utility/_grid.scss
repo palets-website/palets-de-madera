@@ -1,0 +1,8 @@
+.container{
+  max-width: $lg;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include media(xl){
+    max-width: 1160px;
+  }
+}

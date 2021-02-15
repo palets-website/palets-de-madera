@@ -1,0 +1,45 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+{#<pre>#}
+{#{%- for item in collections.madera  -%}#}
+{#  {{ item.data.collections | console }}#}
+{#{%- endfor -%}#}
+{#</pre>#}
+<header class="page__title-block container --homepage">
+  <h1 class="page__title">{{ metadata.title }}</h1>
+  <a href="{{ '/productos/' | url }}" class="page__cta-button button --accent">
+    Ver productos
+  </a>
+</header>
+<section class="page__content container">
+  <h2 class="visually-hidden">{{ titles.benefits }}</h2>
+
+  {% include "benefits.njk" %}
+
+  <h2 class="page__sub-title">{{ metadata.description }}</h2>
+
+  <article class="page__site-description">
+    {{ metadata.longdescription }} {# todo: пеерместить в .md #}
+  </article>
+
+
+</section>
+<section class="page__content --accent-bg --wide">
+  <div class="container">
+    <h2 class="page__sub-title">{{ titles.products }}</h2>
+
+    {% set prodlist = collections.mejor | head(-3) %}
+    {% include "prodlist.njk" %}
+
+    <a class="page__center-button button" href="{{ '/productos/' | url }}">todos productos</a>
+  </div>
+
+
+</section>
+
+
+

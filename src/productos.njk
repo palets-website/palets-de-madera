@@ -1,0 +1,12 @@
+---
+layout: layouts/inner.njk
+permalink: /productos/
+title: productos
+eleventyNavigation:
+  key: productos
+  order: 2
+---
+
+
+{% set prodlist = collections.productos %}
+{% include "prodlist.njk" %}

@@ -1,0 +1,36 @@
+.button{
+  display: inline-block;
+  padding: .6em 1.3em;
+  min-width: 136px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  appearance: none;
+  text-decoration: none;
+  color: $color-accent;
+  background: transparent;
+  border: 1px solid $color-accent;
+  border-radius: 3px;
+  transition: all .3s ease-out;
+  &:hover{
+    color: $color-white;
+    background: $color-accent;
+  }
+  &.--accent{
+    color: $color-white;
+    background: $color-accent;
+    &:hover{
+      border-color: darken($color-accent, 5);
+      background: darken($color-accent, 5);
+    }
+    &:active{
+      border-color: darken($color-accent, 10);
+      background: darken($color-accent, 10);
+    }
+  }
+  &:active{
+    border-color: darken($color-accent, 10);
+    background: darken($color-accent, 10);
+  }
+}

@@ -1,0 +1,66 @@
+<footer class="footer">
+  <h2 class="visually-hidden">{{ titles.addresses }}</h2>
+  <div class="footer__top container">
+      <section class="footer__block">
+        <h3 class="footer__title">{{ contacts.filial_1.city }}</h3>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a class="footer__link --phone"
+               href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+              {{ contacts.filial_1.phone }}
+            </a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link --email" href="mailto:{{ contacts.filial_1.email | trim }}">
+              {{ contacts.filial_1.email }}
+            </a>
+          </li>
+          <li class="footer__item">{{ contacts.filial_1.address }}</li>
+{#          <li class="footer__item">{{ contacts.filial_1.city }}</li>#}
+        </ul>
+      </section>
+      <section class="footer__block">
+        <h3 class="footer__title">{{ contacts.filial_2.city }}</h3>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a class="footer__link --phone"
+               href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+              {{ contacts.filial_2.phone }}
+            </a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link --email" href="mailto:{{ contacts.filial_2.email | trim }}">
+              {{ contacts.filial_2.email }}
+            </a>
+          </li>
+          <li class="footer__item">{{ contacts.filial_2.address }}</li>
+{#          <li class="footer__item">{{ contacts.filial_2.city }}</li>#}
+        </ul>
+      </section>
+      <section class="footer__block">
+        <h3 class="footer__title">{{ titles.footermenu }}</h3>
+
+        {% set navPages = collections.all | eleventyNavigation %}
+        {% macro renderNavListItem(entry) -%}
+          <li class="footer__item --nav-item">
+            <a class="footer__link{% if entry.url == page.url %} --active{% endif %}" href="{{ entry.url | url }}">{{ entry.title }}</a>
+            {%- if entry.children.length -%}
+              <ul class="footer__list --sub-nav">
+                {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endmacro %}
+
+        <ul class="footer__list --nav">
+          {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+        </ul>
+      </section>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <a href="{{ '/' | url }}" class="footer__copyright">{{ metadata.title }} &copy;{{ build.timestamp }}</a>
+      <a href="https://elkin.dev" class="footer__development" target="_blank" rel="noopener">developed by Elkin.dev</a>
+    </div>
+  </div>
+</footer>

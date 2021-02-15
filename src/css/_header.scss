@@ -1,0 +1,302 @@
+.header{
+  @include BoxShadow(6);
+  z-index: 5; // as grid item
+}
+.contacts{
+  margin: 0;
+  background-color: $color-bg;
+  @include BoxShadow(1);
+  &__wrap{
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+
+  }
+  &__item{
+    display: block;
+    margin-right: 2em;
+    &.--right{
+      margin-left: auto;
+      margin-right: 0;
+    }
+    &.--secondary{
+      display: none;
+      @include media(md){
+        display: block;
+      }
+    }
+  }
+  &__link{
+    position: relative;
+    display: block;
+    padding: 10px 16px;
+    color: $color-accent-light;
+    text-decoration: none;
+    line-height: 19px;
+    vertical-align: middle;
+    transition: all .3s ease-out;
+    &.--phone::before{
+      content: '';
+      display: inline-block;
+      margin-right: .3rem;
+      width: 18px;
+      height: 19px;
+      line-height: 19px;
+      vertical-align: bottom;
+      background-image: url(../img/ico-phone.svg);
+    }
+    &.--email::before{
+      content: '';
+      display: inline-block;
+      margin-right: .3rem;
+      width: 18px;
+      height: 15px;
+      line-height: 19px;
+      vertical-align: middle;
+      background-image: url(../img/ico-email.svg);
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      bottom: 4px;
+      left: 16px;
+      transition: all .3s ease-out;
+    }
+    &[href]:hover::after{
+      width: calc(100% - 32px);
+    }
+    &[href]:active{
+      opacity: .7;
+    }
+  }
+}
+.menu-opener{
+  display: block;
+  min-height: 32px;
+  margin-left: auto;
+  margin-right: 16px;
+  padding: 7px 8px 7px 37px;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: Roboto, sans-serif;
+  color: $color-accent-light;
+  background-color: transparent;
+  border: 1px solid $color-accent-light;
+  border-radius: 3px;
+  background-image: url(../img/burger.svg);
+  background-repeat: no-repeat;
+  background-position: 6px center;
+  @include media(sm){
+    display: none;
+  }
+}
+.home-link{
+  display: none;
+  @include media(sm){
+    display: block;
+    padding: 9px 16px;
+    &:hover &__img{
+      transform: scale(1.02);
+      filter: drop-shadow(0 2px 0.45rem rgba($color-bg-dark, .4));
+    }
+    &:active{
+      opacity: .7;
+    }
+    &__img{
+      display: block;
+      transform: scale(1);
+      filter: drop-shadow(0 2px 0.25rem rgba($color-bg-dark, .3));
+      transition: all .3s ease-out;
+    }
+  }
+}
+
+// ==== navigation =====
+
+//for mobile menu script styles:
+body.--fixed{
+  overflow: hidden;
+}
+
+.navigation{
+  display: none;
+  &.--no-js{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (max-width: $sm) {
+    &.--open{
+      display: block;
+      position: fixed;
+      top: 47px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+      background-color: rgba($color-text, 0.6);
+      animation-name: opacity;
+      animation-duration: .3s;
+      .nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        min-width: 60%;
+        display: block;
+        overflow-y: auto;
+        background-color: #fff;
+        animation-name: openMenu;
+        animation-duration: .6s;
+        @include BoxShadow(12)
+      }
+    }
+  }
+  @include media(sm){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+/* Nav */
+.nav {
+  display: block;
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  @include media(sm){
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  &__item{
+    padding: 3px 16px;
+    margin: 0;
+    @include media(sm){
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      &+&{
+        margin-left: 8px;
+      }
+      &.--has-children{
+        position: relative;
+      }
+    }
+  }
+  &__link{
+    //font-size: 14px;
+    //line-height: 16px;
+    position: relative;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-text;
+    @include media(sm){
+      padding: 3px 16px;
+    }
+    &.--active{
+      font-weight: bold;
+    }
+    &.--has-children{
+      @include media(lg){
+        //position: relative;
+        padding-right: 32px;
+        background-image: url(../img/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position-x: calc(100% - 16px);
+        background-position-y: center;
+      }
+    }
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      bottom: 0;
+      left: 16px;
+      transition: all .3s ease-out;
+    }
+    &[href]:hover::after{
+      width: calc(100% - 32px);;
+    }
+    &[href]:active{
+      opacity: .7;
+    }
+
+  }
+  &__sub-nav{
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include media(sm){
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include media(lg){
+      display: none;
+      position: absolute;
+      top: 1.6rem;
+      padding: .5em;
+      border-radius: 3px;
+      background-color: $color-white;
+      //transform: translateY(3rem);
+      //opacity: 0;
+      //transition: all .6s ease-out;
+
+      @include BoxShadow(4);
+      .nav__item{
+        margin: 0;
+      }
+      .nav__link.--has-children{
+        padding-right: 16px;
+        background: none;
+      }
+      & &{
+        display: block;
+        padding: 0 .5rem 0 1rem;
+        position: static;
+        animation: none !important;
+        box-shadow: none;
+      }
+    }
+
+  }
+  @include media(lg){
+    .nav__item.--has-children:hover > &__sub-nav{
+      display: block;
+      animation-name: openSubmenu;
+      animation-duration: .6s;
+    }
+  }
+}
+
+@keyframes opacity {
+  0% { background-color: rgba($color-text, 0); }
+  100% { background-color: rgba($color-text, 0.6); }
+}
+
+@keyframes openMenu {
+  0% { transform: translateX(-105%) }
+  100% { transform: translateX(0) }
+}
+
+@keyframes openSubmenu {
+  0% {
+    transform: translate(-40%, 20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

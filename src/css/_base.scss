@@ -1,0 +1,124 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  min-width: 320px;
+  padding: 0;
+  margin: 0;
+  font-family: roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  color: var(--darkgray);
+  background-color: $white;
+}
+h1,h2,h3,h4{
+  font-family: Montserrat, sans-serif;
+  font-weight: normal;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+a {
+  color: $blue;
+  transition: all .3s ease-out;
+}
+a[href]:visited:not([class]) {
+  color: $navy;
+}
+
+table {
+  margin: 1em 0;
+}
+table td,
+table th {
+  padding-right: 1em;
+}
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  line-height: 1.5;
+  font-size: 1em;
+}
+pre {
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: .5em 0;
+  background-color: #f6f6f6;
+}
+
+/* Posts list */
+.postlist {
+  list-style: none;
+  padding: 0;
+}
+.postlist-item {
+  counter-increment: start-from -1;
+}
+.postlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+}
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--darkgray);
+}
+.postlist-date {
+  word-spacing: -0.5px;
+}
+.postlist-link {
+  display: inline-block;
+  padding: 0.25em 0.1875em; /* 4px 3px /16 */
+}
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+.tmpl-home .postlist-link {
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+}
+
+/* Warning */
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.625em; /* 16px 10px /16 */
+}
+.warning ol:only-child {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.contact__list{
+  list-style: none;
+}

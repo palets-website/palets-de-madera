@@ -1,0 +1,111 @@
+.page{
+  background-color: $color-bg;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat, no-repeat;
+  background-image: url(../img/main-bg-sm.jpg);
+  @media (min-resolution: 2dppx){
+    background-image: url(../img/main-bg-sm@2x.jpg);
+  }
+  @media (min-width: 391px){
+    background-image: url(../img/main-bg-sm@2x.jpg);
+  }
+  @media (min-width: 391px) and (min-resolution: 2dppx){
+    background-image: url(../img/main-bg-md@2x.jpg);
+  }
+  @media (min-width: 781px) {
+    background-image:
+      url(../img/main-bg.jpg),
+      linear-gradient(to bottom, lighten($color-bg-dark, 10) 300px, $color-white 600px);
+  }
+  @media (min-width: 781px) and (min-resolution: 2dppx) {
+    background-image:
+      url(../img/main-bg@2x.jpg),
+      linear-gradient(to bottom, lighten($color-bg-dark, 10) 300px, $color-white 600px);
+  }
+  &__title-block{
+    //min-height: 320px;
+    padding-top: 1rem;
+    text-align: center;
+    @include media(md){
+      //min-height: 350px;
+    }
+  }
+  &__title{
+    margin-top: 44px;
+    margin-bottom: 44px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    text-transform: capitalize;
+    color: $color-white;
+    text-shadow: 2px 4px 7px rgba(46, 14, 11, 84%);
+    @include media(md) {
+      margin-top: 130px;
+      margin-bottom: 61px;
+      font-size: 64px;
+      line-height: 78px;
+    }
+  }
+  &__cta-button{
+    margin-bottom: 100px;
+    @include media(md){
+      margin-bottom: 70px;
+      min-width: 170px;
+      min-height: 44px;
+    }
+    @include BoxShadow(2);
+    &:hover{
+      @include BoxShadow(4);
+    }
+  }
+  &__content{
+    padding-top: 75px;
+    padding-bottom: 90px;
+    background-color: $color-white;
+    border-radius: 3px 3px 0 0;
+    @include BoxShadow(8);
+    &.--accent-bg{
+      background-color: $color-bg-lighten;
+    }
+    &.--wide{
+      @include BoxShadow(0);
+    }
+  }
+  &__sub-title,
+  &__content h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    color: $color-bg;
+  }
+  &__site-description{
+    text-align: center;
+  }
+  &__center-button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 70px;
+    width: max-content;
+  }
+  &__pre-nav{
+    margin-top: 3rem;
+  }
+  &__nav{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    &-next{
+      margin-left: auto;
+    }
+    &-prev{
+      margin-right: auto;
+    }
+  }
+}

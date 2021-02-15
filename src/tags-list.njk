@@ -1,0 +1,17 @@
+---
+permalink: /tags/
+layout: layouts/inner.njk
+title: todos tags
+---
+{#<h1>Tags</h1>#}
+<ul class="tags --large">
+  {% for tag in collections.tagList %}
+    {% set counter = collections[tag].length %}
+
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <li class="tags__item">
+      <a href="{{ tagUrl | url }}" class="tags__link {{ tag }}">{{ tag }}</a> ({{ counter }} {% if counter > 1 %}productos{% else %}producto{% endif %})
+    </li>
+  {% endfor %}
+</ul>
+

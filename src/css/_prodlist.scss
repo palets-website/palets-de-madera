@@ -1,0 +1,119 @@
+.prodlist{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 -1em;
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 300px;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 3px;
+    background-color: $color-white;
+    border: 1px solid $color-bg-light;
+    @include BoxShadow(6);
+    transition: all .3s ease-out;
+    &:hover {
+      @include BoxShadow(12);
+      img{
+        transform: scale(1.02);
+      }
+    }
+  }
+  &__link{
+    display: block;
+    aspect-ratio: 1/1;
+    img, picture{
+      display: block;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      overflow: hidden;
+      transition: all .3s ease-out;
+      transform: scale(1);
+    }
+  }
+  &__title{
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: $color-bg;
+    margin-bottom: 0;
+
+  }
+  &__title-link{
+    text-decoration: none;
+  }
+  &__attribute{
+    margin-top: .75em;
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: $color-accent;
+  }
+  &__text{
+    margin-top: 1.4rem;
+    margin-bottom: 2em;
+    flex-grow: 1;
+  }
+  &__button{
+    display: block;
+    margin: 0 auto;
+  }
+  &__tagslist{
+    position: absolute;
+    top: 0;
+    left: -4px;
+  }
+}
+
+.tags{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  &.--large{
+    padding-left: 1rem;
+  }
+  &__item{
+    margin-top: .4rem;
+    line-height: 1;
+    .--large &{
+      margin-top: 1rem;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+  &__link{
+    position: relative;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 1;
+    padding: .5em 2em .5em 1.2em;
+    border-radius: 2px 0 0 2px;
+    text-decoration: none;
+    color: $color-white;
+    background-color: $color-bg-light;
+    &:after{
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border: 1em solid transparent;
+      border-right-color: white;
+    }
+    .--large &{
+      font-size: 16px;
+    }
+  }
+}

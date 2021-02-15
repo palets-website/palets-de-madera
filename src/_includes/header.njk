@@ -1,0 +1,53 @@
+<header class="header">
+  <div class="contacts">
+    <address class="contacts__wrap container">
+      <span class="contacts__item ">
+        <a href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}"
+           class="contacts__link --phone"
+        >
+          {{ contacts.filial_1.phone }}
+        </a>
+      </span>
+        <span class="contacts__item --secondary">
+        <a href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}"
+           class="contacts__link --phone"
+        >
+          {{ contacts.filial_2.phone }}
+        </a>
+      </span>
+        <span class="contacts__item --right --secondary">
+        <a href="mailto:{{ contacts.filial_1.email | trim }}"
+           class="contacts__link --email"
+        >
+          {{ contacts.filial_1.email }}
+        </a>
+      </span>
+      <button type="button" class="menu-opener">Menu</button>
+    </address>
+  </div>
+
+  <nav class="navigation container --no-js">
+      <a class="home-link" href="{{ '/' | url }}" >
+        <img class="home-link__img" src="{{ '/img/logo.svg' | url }}" alt="{{ metadata.title }}" width="114">
+      </a>
+
+    {% set navPages = collections.all | eleventyNavigation %}
+    {% macro renderNavListItem(entry) -%}
+      <li class="nav__item {% if entry.children.length %} --has-children{% endif %}">
+        <a class="nav__link {% if entry.url == page.url %} --active{% endif %} {% if entry.children.length %} --has-children{% endif %}"
+           href="{{ entry.url | url }}">
+          {{ entry.title }}
+        </a>
+        {%- if entry.children.length -%}
+          <ul class="nav__sub-nav">
+            {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endmacro %}
+
+    <ul class="nav">
+      {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+    </ul>
+  </nav>
+</header>

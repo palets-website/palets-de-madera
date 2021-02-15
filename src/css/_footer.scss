@@ -1,0 +1,93 @@
+.footer{
+  background-color: $color-bg;
+  color: $color-white;
+  @include BoxShadow(8);
+  &__top{
+    padding: 0;
+    @include media(sm){
+
+      display: flex;
+      @supports (display: grid) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+      }
+    }
+
+  }
+  &__block{
+    padding: 1rem;
+  }
+  &__title{
+    text-transform: uppercase;
+  }
+  &__list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &.--sub-nav{
+      margin-top: .5rem;
+      margin-left: 1rem;
+    }
+  }
+  &__item + &__item{
+    margin-top: .65em;
+  }
+  &__link{
+    color: $color-white;
+    @include media(lg){
+      text-decoration: none;
+    }
+    .--nav-item &{
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .--nav-item &.--active{
+      font-weight: bold;
+    }
+    &.--phone{
+      color: $color-accent-light;
+      @include media(lg){
+        color: $color-white;
+      }
+    }
+    &.--email{
+      @include media(lg){
+        color: $color-accent-light;
+      }
+    }
+    &:hover{
+      opacity: .6;
+      @include media(lg){
+        text-decoration: underline;
+      }
+    }
+    &:active{
+      opacity: .45;
+    }
+
+  }
+  &__bottom{
+    padding: 10px 0;
+    background-color: $color-bg-dark;
+    @include BoxShadow(6);
+    .container{
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+    }
+  }
+  &__copyright,
+  &__development{
+    padding: 12px 16px;
+    color: $color-white;
+    text-decoration: none;
+  }
+  &__development{
+    opacity: .45;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

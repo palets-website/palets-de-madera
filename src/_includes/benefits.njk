@@ -1,0 +1,15 @@
+<ul class="features" >
+  {% for item in features %}
+    <li class="features__item">
+      <h3 class="features__title">{{item.title}}</h3>
+      {%- if item.subtitle -%}
+      <p class="features__subtitle">
+        {{ item.subtitle }}
+      </p>
+      {%- endif -%}
+      <p class="features__text">
+        {{ item.text }}
+      </p>
+    </li>
+  {% endfor %}
+</ul>

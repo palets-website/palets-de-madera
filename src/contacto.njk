@@ -1,0 +1,46 @@
+---
+layout: layouts/inner.njk
+title: Contacto
+templateClass: tmpl-inner
+permalink: /contacto/
+eleventyNavigation:
+  key: Contacto
+  order: 3
+---
+
+<section class="contact">
+  <h3 class="contact__title">{{ contacts.filial_1.city }}</h3>
+  <ul class="contact__list">
+    <li class="contact__item">
+      <a class="contact__link --phone"
+         href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+        {{ contacts.filial_1.phone }}
+      </a>
+    </li>
+    <li class="contact__item">
+      <a class="contact__link --email" href="mailto:{{ contacts.filial_1.email | trim }}">
+        {{ contacts.filial_1.email }}
+      </a>
+    </li>
+    <li class="contact__item">{{ contacts.filial_1.address }}</li>
+  </ul>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6292.226771051244!2d-4.955599749406214!3d36.49919876549481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7329dc431092a5%3A0x45990ec1068484f7!2sCamino%20del%20%C3%81ngel%2C%20109%2C%20Bloque%203%2C%201%2C%2029660%20Marbella%2C%20M%C3%A1laga!5e0!3m2!1sru!2ses!4v1613179228507!5m2!1sru!2ses" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</section>
+<section class="contact --right">
+  <h3 class="contact__title">{{ contacts.filial_2.city }}</h3>
+  <ul class="contact__list">
+    <li class="contact__item">
+      <a class="contact__link --phone"
+         href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+        {{ contacts.filial_2.phone }}
+      </a>
+    </li>
+    <li class="contact__item">
+      <a class="contact__link --email" href="mailto:{{ contacts.filial_2.email | trim }}">
+        {{ contacts.filial_2.email }}
+      </a>
+    </li>
+    <li class="contact__item">{{ contacts.filial_2.address }}</li>
+  </ul>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6292.226771051244!2d-4.955599749406214!3d36.49919876549481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7329dc431092a5%3A0x45990ec1068484f7!2sCamino%20del%20%C3%81ngel%2C%20109%2C%20Bloque%203%2C%201%2C%2029660%20Marbella%2C%20M%C3%A1laga!5e0!3m2!1sru!2ses!4v1613179228507!5m2!1sru!2ses" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</section>

@@ -1,0 +1,16 @@
+{
+  "title": "Palets de madera",
+  "url": "https://example.com/",
+  "description": "Venta de palets de madera en España.",
+  "longdescription": "En Ecuepal brindamos a las empresas de Valencia y alrededores, palets nuevos y reciclados, de calidad. Disponemos de varias medidas y fabricamos palets personalizados, según la necesidad del consumidor. Nuestro objetivo es siempre dar el mejor servicio a nuestros clientes con la mayor brevedad posible.  Si quieres comprar Palets en Valencia, somos tu solución.",
+  "feed": {
+    "subtitle": "Venta de palets de madera en España.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://palets-de-madera.es/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://palets-de-madera.es/feed/feed.json"
+  }
+}
