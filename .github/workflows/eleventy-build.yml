@@ -1,9 +1,9 @@
 name: Eleventy Build
 on:
   push:
-    branches: [ master ]
+    branches: [ non-existence-branch-for-never-build ]
   pull_request:
-    branches: [ master ]
+    branches: [ non-existence-branch-for-never-build ]
 
 jobs:
   build-and-deploy:
