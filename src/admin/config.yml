@@ -10,7 +10,6 @@ collections:
   - name: "main"
     label: "основные данные"
     files:
-
       - label: "О фирме"
         name: "metadata"
         file: "src/_data/metadata.json"
@@ -21,7 +20,6 @@ collections:
           - {label: URL, name: url, widget: string}
           - {label: Заголовок, name: description, widget: string}
           - {label: Описание, name: longdescription, widget: string}
-
       - label: "Заголовки"
         name: "titles"
         file: "src/_data/titles.json"
@@ -31,7 +29,6 @@ collections:
           - {label: "Преимущества", name: "benefits", widget: "string"}
           - {label: "Товары", name: "products", widget: "string"}
           - {label: "Нижнее меню", name: "footermenu", widget: "string"}
-
       - label: "Преимущества"
         name: "benefits"
         file: "src/_data/features.json"
@@ -48,7 +45,6 @@ collections:
             - {label: "Заголовок", name: "title", widget: "string"}
             - {label: "Подзаголовок", name: "subtitle", widget: "string"}
             - {label: "текст", name: "text", widget: "string"}
-
       - name: "contacts"
         label: "Контакты"
         file: "src/_data/contacts.json"
@@ -66,8 +62,6 @@ collections:
             fields:
               - {label: "Город", name: "city", widget: "string"}
               - {label: "Адрес", name: "address", widget: "string"}
-
-
   - name: "palets"
     label: "Палеты"
     folder: "src/palets"
