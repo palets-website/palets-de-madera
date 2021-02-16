@@ -56,10 +56,39 @@
       @include media(lg){
         color: $color-white;
       }
+      &::before{
+        content: '';
+        display: inline-block;
+        margin-right: .3em;
+        width: 1em;
+        height: 1em;
+        line-height: inherit;
+        vertical-align: middle;
+        background-image: url(../img/ico-phone.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      &.--whatsapp::before{
+        background-image: url(../img/whatsapp-1.svg);
+      }
     }
     &.--email{
       @include media(lg){
         color: $color-accent-light;
+      }
+      &::before{
+        content: '';
+        display: inline-block;
+        margin-right: .3em;
+        width: 1em;
+        height: 1em;
+        line-height: inherit;
+        vertical-align: middle;
+        background-image: url(../img/ico-email.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
     &:hover{
