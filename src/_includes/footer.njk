@@ -4,37 +4,57 @@
       <section class="footer__block">
         <h3 class="footer__title">{{ contacts.filial_1.city }}</h3>
         <ul class="footer__list">
-          <li class="footer__item">
-            <a class="footer__link --phone"
-               href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
-              {{ contacts.filial_1.phone }}
-            </a>
-          </li>
-          <li class="footer__item">
-            <a class="footer__link --email" href="mailto:{{ contacts.filial_1.email | trim }}">
-              {{ contacts.filial_1.email }}
-            </a>
-          </li>
+{#          <li class="footer__item">#}
+{#            <a class="footer__link --phone"#}
+{#               href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">#}
+{#              {{ contacts.filial_1.phone }}#}
+{#            </a>#}
+{#          </li>#}
+{#          <li class="footer__item">#}
+{#            <a class="footer__link --email" href="mailto:{{ contacts.filial_1.email | trim }}">#}
+{#              {{ contacts.filial_1.email }}#}
+{#            </a>#}
+{#          </li>#}
           <li class="footer__item">{{ contacts.filial_1.address }}</li>
-{#          <li class="footer__item">{{ contacts.filial_1.city }}</li>#}
         </ul>
       </section>
       <section class="footer__block">
         <h3 class="footer__title">{{ contacts.filial_2.city }}</h3>
         <ul class="footer__list">
+{#          <li class="footer__item">#}
+{#            <a class="footer__link --phone"#}
+{#               href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">#}
+{#              {{ contacts.filial_2.phone }}#}
+{#            </a>#}
+{#          </li>#}
+{#          <li class="footer__item">#}
+{#            <a class="footer__link --email" href="mailto:{{ contacts.filial_2.email | trim }}">#}
+{#              {{ contacts.filial_2.email }}#}
+{#            </a>#}
+{#          </li>#}
+          <li class="footer__item">{{ contacts.filial_2.address }}</li>
+        </ul>
+      </section>
+      <section class="footer__block">
+        <h3 class="footer__title">{{ titles.contactos }}</h3>
+        <ul class="footer__list">
           <li class="footer__item">
             <a class="footer__link --phone"
-               href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
-              {{ contacts.filial_2.phone }}
+               href="tel:{{ contacts.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+              {{ contacts.phone }}
             </a>
           </li>
           <li class="footer__item">
-            <a class="footer__link --email" href="mailto:{{ contacts.filial_2.email | trim }}">
-              {{ contacts.filial_2.email }}
+            <a class="footer__link --phone"
+               href="tel:{{ contacts.whatsapp | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+              {{ contacts.whatsapp }}
             </a>
           </li>
-          <li class="footer__item">{{ contacts.filial_2.address }}</li>
-{#          <li class="footer__item">{{ contacts.filial_2.city }}</li>#}
+          <li class="footer__item">
+            <a class="footer__link --email" href="mailto:{{ contacts.email | trim }}">
+              {{ contacts.email }}
+            </a>
+          </li>
         </ul>
       </section>
       <section class="footer__block">

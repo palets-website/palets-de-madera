@@ -45,6 +45,16 @@
       vertical-align: bottom;
       background-image: url(../img/ico-phone.svg);
     }
+    &.--whatsapp::before{
+      content: '';
+      display: inline-block;
+      margin-right: .3rem;
+      width: 19px;
+      height: 19px;
+      line-height: 19px;
+      vertical-align: bottom;
+      background-image: url(../img/whatsapp-1.svg);
+    }
     &.--email::before{
       content: '';
       display: inline-block;

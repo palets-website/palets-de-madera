@@ -5,12 +5,17 @@
   &__top{
     padding: 0;
     @include media(sm){
-
       display: flex;
+      flex-wrap: wrap;
       @supports (display: grid) {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
+      }
+    }
+    @include media(md){
+      @supports (display: grid) {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
 

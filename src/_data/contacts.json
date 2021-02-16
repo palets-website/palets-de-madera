@@ -1,14 +1,13 @@
 {
+  "phone": "631 481 251",
+  "whatsapp": "677 827 860",
+  "email": "palets-de-madera@yandex.ru",
   "filial_1": {
-    "city": "Marbella",
-    "email": "ejemplo@gmail.com",
-    "phone": "+34 (698) 99-09-01",
-    "address": "Camino del Ángel,109, Bloque 3, 1 29604 , Nueva Andalucía , Marbella , Málaga ( España)"
+    "city": "Valencia",
+    "address": "calle Ceramista Marcial Marco 5 46940, Manises, Valencia"
   },
   "filial_2": {
     "city": "Marbella",
-    "email": "ejemplo@gmail.com",
-    "phone": "698 22 22 22",
-    "address": "Camino del Ángel,109, Bloque 3, 1 29604 , Nueva Andalucía , Marbella , Málaga ( España)"
+    "address": "Camino del Ángel,109, Bloque 3, 1 29604 , Nueva Andalucía , Marbella , Málaga"
   }
 }

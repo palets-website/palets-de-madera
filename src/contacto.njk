@@ -1,5 +1,6 @@
 ---
-layout: layouts/inner.njk
+#layout: layouts/inner.njk
+layout: layouts/home.njk
 title: Contacto
 templateClass: tmpl-inner
 permalink: /contacto/
@@ -8,39 +9,68 @@ eleventyNavigation:
   order: 3
 ---
 
-<section class="contact">
-  <h3 class="contact__title">{{ contacts.filial_1.city }}</h3>
-  <ul class="contact__list">
-    <li class="contact__item">
-      <a class="contact__link --phone"
-         href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
-        {{ contacts.filial_1.phone }}
-      </a>
-    </li>
-    <li class="contact__item">
-      <a class="contact__link --email" href="mailto:{{ contacts.filial_1.email | trim }}">
-        {{ contacts.filial_1.email }}
-      </a>
-    </li>
-    <li class="contact__item">{{ contacts.filial_1.address }}</li>
-  </ul>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6292.226771051244!2d-4.955599749406214!3d36.49919876549481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7329dc431092a5%3A0x45990ec1068484f7!2sCamino%20del%20%C3%81ngel%2C%20109%2C%20Bloque%203%2C%201%2C%2029660%20Marbella%2C%20M%C3%A1laga!5e0!3m2!1sru!2ses!4v1613179228507!5m2!1sru!2ses" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<header class="page__title-block container">
+  <h1 class="page__title">{{ title }}</h1>
+</header>
+
+<article class="">
+<section class="contact ">
+  <section class="contact__block page__content container">
+    <h2 class="contact__title">{{ titles.contactos }}</h2>
+    <ul class="contact__list">
+      <li class="contact__item">
+        Teléfono:
+        <a class="contact__link --phone"
+           href="tel:{{ contacts.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+           {{ contacts.phone }}
+        </a>
+      </li>
+      <li class="contact__item">
+        WhatsApp:
+        <a class="contact__link --phone"
+           href="tel:{{ contacts.whatsapp | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
+           {{ contacts.whatsapp }}
+        </a>
+      </li>
+      <li class="contact__item">
+        E-mail:
+        <a class="contact__link --email" href="mailto:{{ contacts.email | trim }}">
+          {{ contacts.email }}
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="page__content --accent-bg --wide">
+    <h2 class="contact__title">{{ addresses }}</h2>
+    <div class="container contact__address-block-wrapper">
+      <div class="contact__address-block">
+
+        <ul class="contact__list">
+          <li class="contact__item">
+            <h3 class="contact__title">{{ contacts.filial_1.city }}</h3>
+          </li>
+          <li class="contact__item">{{ contacts.filial_1.address }}</li>
+        </ul>
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1539.539824608484!2d-0.46904871522613567!3d39.49011604913406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDI5JzI0LjMiTiAwwrAyOCcwNy4yIlc!5e0!3m2!1ses!2ses!4v1613431477745!5m2!1ses!2ses" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <div class="container contact__address-block-wrapper --revers">
+      <div class="contact__address-block">
+
+        <ul class="contact__list">
+          <li class="contact__item">
+            <h3 class="contact__title">{{ contacts.filial_2.city }}</h3>
+          </li>
+          <li class="contact__item">{{ contacts.filial_2.address }}</li>
+        </ul>
+      </div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6292.226771051244!2d-4.955599749406214!3d36.49919876549481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7329dc431092a5%3A0x45990ec1068484f7!2sCamino%20del%20%C3%81ngel%2C%20109%2C%20Bloque%203%2C%201%2C%2029660%20Marbella%2C%20M%C3%A1laga!5e0!3m2!1sru!2ses!4v1613179228507!5m2!1sru!2ses" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+  </section>
+
 </section>
 <section class="contact --right">
-  <h3 class="contact__title">{{ contacts.filial_2.city }}</h3>
-  <ul class="contact__list">
-    <li class="contact__item">
-      <a class="contact__link --phone"
-         href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
-        {{ contacts.filial_2.phone }}
-      </a>
-    </li>
-    <li class="contact__item">
-      <a class="contact__link --email" href="mailto:{{ contacts.filial_2.email | trim }}">
-        {{ contacts.filial_2.email }}
-      </a>
-    </li>
-    <li class="contact__item">{{ contacts.filial_2.address }}</li>
-  </ul>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6292.226771051244!2d-4.955599749406214!3d36.49919876549481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7329dc431092a5%3A0x45990ec1068484f7!2sCamino%20del%20%C3%81ngel%2C%20109%2C%20Bloque%203%2C%201%2C%2029660%20Marbella%2C%20M%C3%A1laga!5e0!3m2!1sru!2ses!4v1613179228507!5m2!1sru!2ses" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
 </section>
+</article>

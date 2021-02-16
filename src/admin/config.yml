@@ -1,0 +1,133 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update
+
+media_folder: "src/img"
+public_folder: "/img"
+
+collections:
+
+  - name: "main"
+    label: "основные данные"
+    files:
+
+      - label: "О фирме"
+        name: "metadata"
+        file: "src/_data/metadata.json"
+        fields:
+#          - {label: Name, name: name, widget: string}
+#          - {label: Occupation, name: occupation, widget: string}
+          - {label: Титул, name: title, widget: string}
+          - {label: URL, name: url, widget: string}
+          - {label: Заголовок, name: description, widget: string}
+          - {label: Описание, name: longdescription, widget: string}
+
+      - label: "Заголовки"
+        name: "titles"
+        file: "src/_data/titles.json"
+        fields:
+          - {label: "Адреса", name: "addresses", widget: "string"}
+          - {label: "контакты", name: "contactos", widget: "string"}
+          - {label: "Преимущества", name: "benefits", widget: "string"}
+          - {label: "Товары", name: "products", widget: "string"}
+          - {label: "Нижнее меню", name: "footermenu", widget: "string"}
+
+      - label: "Преимущества"
+        name: "benefits"
+        file: "src/_data/features.json"
+        fields:
+          - label: "Преимущество 1"
+            - {label: "Заголовок", name: "title", widget: "string"}
+            - {label: "Подзаголовок", name: "subtitle", widget: "string"}
+            - {label: "текст", name: "text", widget: "string"}
+          - label: "Преимущество 1"
+            - {label: "Заголовок", name: "title", widget: "string"}
+            - {label: "Подзаголовок", name: "subtitle", widget: "string"}
+            - {label: "текст", name: "text", widget: "string"}
+          - label: "Преимущество 1"
+            - {label: "Заголовок", name: "title", widget: "string"}
+            - {label: "Подзаголовок", name: "subtitle", widget: "string"}
+            - {label: "текст", name: "text", widget: "string"}
+
+      - name: "contacts"
+        label: "Контакты"
+        file: "src/_data/contacts.json"
+        fields:
+          - {label: "phone", name: "phone", widget: "string"}
+          - {label: "whatsapp", name: "whatsapp", widget: "string"}
+          - {label: "email", name: "email", widget: "string"}
+          - name: "filial_1",
+            label: "Филиал 1",
+            fields:
+              - {label: "Город", name: "city", widget: "string"}
+              - {label: "Адрес", name: "address", widget: "string"}
+          - name: "filial_1",
+            label: "Филиал 1",
+            fields:
+              - {label: "Город", name: "city", widget: "string"}
+              - {label: "Адрес", name: "address", widget: "string"}
+
+
+  - name: "palets"
+    label: "Палеты"
+    folder: "src/palets"
+    create: true
+    fields:
+      - {label: "title", name: "title", widget: "string"}
+      - {label: "description", name: "description", widget: "string"}
+      - {label: "tipo", name: "tipo", widget: "string"}
+      - {label: "uso", name: "uso", widget: "string"}
+      - {label: "woodtype", name: "woodtype", widget: "string"}
+      - {label: "wood", name: "wood", widget: "string"}
+      - {label: "condicion", name: "condicion", widget: "string"}
+      - {label: "region", name: "region", widget: "string"}
+      - {label: "volumen", name: "volumen", widget: "string"}
+      - {label: "height", name: "height", widget: "string"}
+      - {label: "thickness", name: "thickness", widget: "string"}
+      - {label: "length", name: "length", widget: "string"}
+      - {label: "mark", name: "mark", widget: "string"}
+      - {label: "board", name: "board", widget: "string"}
+      - {label: "traverse", name: "traverse", widget: "string"}
+      - {label: "system", name: "system", widget: "string"}
+      - {label: "calidad", name: "calidad", widget: "string"}
+      - {label: "desecado", name: "desecado", widget: "string"}
+      - {label: "calidad", name: "calidad", widget: "string"}
+      - {label: "price", name: "price", widget: "string"}
+      - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string"}
+      - {label: "vendePara", name: "vendePara", widget: "string"}
+      - {label: "date", name: "date", widget: "string"}
+      - {label: "img", name: "img", widget: "string"}
+      - { label: "Tags", name: "tags", widget: "list" }
+      - {label: "Полное описание", name: "body", widget: "markdown"}
+
+  - name: "madera"
+    label: "Древесина"
+    folder: "src/madera"
+    create: true
+    fields:
+      - {label: "title", name: "title", widget: "string"}
+      - {label: "description", name: "description", widget: "string"}
+      - {label: "tipo", name: "tipo", widget: "string"}
+      - {label: "uso", name: "uso", widget: "string"}
+      - {label: "woodtype", name: "woodtype", widget: "string"}
+      - {label: "wood", name: "wood", widget: "string"}
+      - {label: "condicion", name: "condicion", widget: "string"}
+      - {label: "region", name: "region", widget: "string"}
+      - {label: "volumen", name: "volumen", widget: "string"}
+      - {label: "height", name: "height", widget: "string"}
+      - {label: "thickness", name: "thickness", widget: "string"}
+      - {label: "length", name: "length", widget: "string"}
+      - {label: "mark", name: "mark", widget: "string"}
+      - {label: "board", name: "board", widget: "string"}
+      - {label: "traverse", name: "traverse", widget: "string"}
+      - {label: "system", name: "system", widget: "string"}
+      - {label: "calidad", name: "calidad", widget: "string"}
+      - {label: "desecado", name: "desecado", widget: "string"}
+      - {label: "calidad", name: "calidad", widget: "string"}
+      - {label: "price", name: "price", widget: "string"}
+      - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string"}
+      - {label: "vendePara", name: "vendePara", widget: "string"}
+      - {label: "date", name: "date", widget: "string"}
+      - {label: "img", name: "img", widget: "string"}
+      - { label: "Tags", name: "tags", widget: "list" }
+      - {label: "Полное описание", name: "body", widget: "markdown"}

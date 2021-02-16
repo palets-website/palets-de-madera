@@ -2,24 +2,24 @@
   <div class="contacts">
     <address class="contacts__wrap container">
       <span class="contacts__item ">
-        <a href="tel:{{ contacts.filial_1.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}"
+        <a href="tel:{{ contacts.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}"
            class="contacts__link --phone"
         >
-          {{ contacts.filial_1.phone }}
+          {{ contacts.phone }}
         </a>
       </span>
         <span class="contacts__item --secondary">
-        <a href="tel:{{ contacts.filial_2.phone | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}"
-           class="contacts__link --phone"
+        <a href="https://wa.me/34{{ contacts.whatsapp | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}"
+           class="contacts__link --whatsapp"
         >
-          {{ contacts.filial_2.phone }}
+          {{ contacts.whatsapp }}
         </a>
       </span>
         <span class="contacts__item --right --secondary">
-        <a href="mailto:{{ contacts.filial_1.email | trim }}"
+        <a href="mailto:{{ contacts.email | trim }}"
            class="contacts__link --email"
         >
-          {{ contacts.filial_1.email }}
+          {{ contacts.email }}
         </a>
       </span>
       <button type="button" class="menu-opener">Menu</button>
