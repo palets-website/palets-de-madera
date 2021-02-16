@@ -45,12 +45,14 @@
             </a>
           </li>
           <li class="footer__item">
-            <a class="footer__link --phone"
+
+            <a class="footer__link --phone --whatsapp"
                href="tel:{{ contacts.whatsapp | replace(" ", "") | replace("-", "") | replace("(", "") | replace(")", "") | replace("+", "")| urlencode }}">
               {{ contacts.whatsapp }}
             </a>
           </li>
           <li class="footer__item">
+
             <a class="footer__link --email" href="mailto:{{ contacts.email | trim }}">
               {{ contacts.email }}
             </a>

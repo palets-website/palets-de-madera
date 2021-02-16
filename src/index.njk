@@ -10,7 +10,10 @@ eleventyNavigation:
 {#{%- endfor -%}#}
 {#</pre>#}
 <header class="page__title-block container --homepage">
-  <h1 class="page__title">{{ metadata.title }}</h1>
+  <h1 class="page__title">
+    <span class="small">{{ titles.subtitle }}</span> <br>
+    {{ metadata.title }}
+  </h1>
   <a href="{{ '/productos/' | url }}" class="page__cta-button button --accent">
     Ver productos
   </a>

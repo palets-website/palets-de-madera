@@ -19,6 +19,15 @@ async function imageShortcode(src, alt, sizes) {
     formats: ["avif", "webp", "jpeg"],
     urlPath: "/img/",
     outputDir: "./_site/img",
+    cacheOptions: {
+      // if a remote image URL, this is the amount of time before it fetches a fresh copy
+      duration: "3y",
+
+      // project-relative path to the cache directory
+      directory: ".cache",
+
+      removeUrlQueryParams: false,
+    },
   });
 
   let imageAttributes = {
@@ -113,22 +122,22 @@ module.exports = function(eleventyConfig) {
     return [...tagSet];
   });
 
-  const products = ['palets', 'madera']
+  const products = ['palets', 'madera'];
 
   products.forEach((name) => {
     eleventyConfig.addCollection(name, function (collection) {
-      const folder = "./src/" + name + "/*.md"
+      const folder = "./src/" + name + "/*.md";
       const byStartDate = (a, b) => {
         if (a.data.date && b.data.date) { //todo: change to order ???
           return a.data.date - b.data.date
         }
         return 0
-      }
+      };
       return collection
         .getFilteredByGlob(folder)
         .sort(byStartDate)
     })
-  })
+  });
 
   eleventyConfig.addCollection("productos", function(collectionApi) {
     return collectionApi.getFilteredByGlob(["src/palets/*.md", "src/madera/*.md"]);
@@ -138,7 +147,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("./favicon.ico");
   eleventyConfig.addPassthroughCopy("src/fonts");
-  eleventyConfig.addPassthroughCopy('src/admin')
+  eleventyConfig.addPassthroughCopy('src/admin');
   // eleventyConfig.addPassthroughCopy("src/css");
 
   /* Markdown Overrides */
