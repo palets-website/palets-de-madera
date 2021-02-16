@@ -14,8 +14,6 @@ collections:
         name: "metadata"
         file: "src/_data/metadata.json"
         fields:
-#          - {label: Name, name: name, widget: string}
-#          - {label: Occupation, name: occupation, widget: string}
           - {label: Титул, name: title, widget: string}
           - {label: URL, name: url, widget: string}
           - {label: Заголовок, name: description, widget: string}
@@ -33,32 +31,27 @@ collections:
         name: "benefits"
         file: "src/_data/features.json"
         fields:
-          - label: "Преимущество 1"
+          - label: "benefit"
+            name: "benefit"
+            widget: "list"
+            fields:
             - {label: "Заголовок", name: "title", widget: "string"}
             - {label: "Подзаголовок", name: "subtitle", widget: "string"}
             - {label: "текст", name: "text", widget: "string"}
-          - label: "Преимущество 1"
-            - {label: "Заголовок", name: "title", widget: "string"}
-            - {label: "Подзаголовок", name: "subtitle", widget: "string"}
-            - {label: "текст", name: "text", widget: "string"}
-          - label: "Преимущество 1"
-            - {label: "Заголовок", name: "title", widget: "string"}
-            - {label: "Подзаголовок", name: "subtitle", widget: "string"}
-            - {label: "текст", name: "text", widget: "string"}
-      - name: "contacts"
-        label: "Контакты"
+      - label: "Контакты"
+        name: "contacts"
         file: "src/_data/contacts.json"
         fields:
           - {label: "phone", name: "phone", widget: "string"}
           - {label: "whatsapp", name: "whatsapp", widget: "string"}
           - {label: "email", name: "email", widget: "string"}
-          - name: "filial_1",
-            label: "Филиал 1",
+          - label: "Филиал 1"
+            name: "filial_1"
             fields:
               - {label: "Город", name: "city", widget: "string"}
               - {label: "Адрес", name: "address", widget: "string"}
-          - name: "filial_1",
-            label: "Филиал 1",
+          - label: "Филиал 2"
+            name: "filial_2"
             fields:
               - {label: "Город", name: "city", widget: "string"}
               - {label: "Адрес", name: "address", widget: "string"}
@@ -85,7 +78,7 @@ collections:
       - {label: "system", name: "system", widget: "string"}
       - {label: "calidad", name: "calidad", widget: "string"}
       - {label: "desecado", name: "desecado", widget: "string"}
-      - {label: "calidad", name: "calidad", widget: "string"}
+#      - {label: "calidad", name: "calidad", widget: "string"}
       - {label: "price", name: "price", widget: "string"}
       - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string"}
       - {label: "vendePara", name: "vendePara", widget: "string"}
@@ -117,7 +110,7 @@ collections:
       - {label: "system", name: "system", widget: "string"}
       - {label: "calidad", name: "calidad", widget: "string"}
       - {label: "desecado", name: "desecado", widget: "string"}
-      - {label: "calidad", name: "calidad", widget: "string"}
+#      - {label: "calidad", name: "calidad", widget: "string"}
       - {label: "price", name: "price", widget: "string"}
       - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string"}
       - {label: "vendePara", name: "vendePara", widget: "string"}
