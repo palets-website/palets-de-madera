@@ -23,5 +23,8 @@ fechaDeEntrega: "-"
 vendePara: España
 date: "-"
 img: https://images.fordaq.com/p-18120000-18114001-1/KD-Pine-Sawn-Lumber.jpg
+tags:
+  - new
+  - test
 ---
 \-
