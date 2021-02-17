@@ -14,6 +14,10 @@ templateClass: tmpl-post
         {% image img, description, "600px"  %}
       {% elseif img  %}
         {% image img, title, "600px"  %}
+      {% elseif description %}
+        <img src="{{ '/img/logo-bw.svg' | url }}", alt="{{ description }}" width="300" height="300" >
+      {% else %}
+        <img src="{{ '/img/logo-bw.svg' | url }}", alt="{{ title }}" width="300" height="300" >
       {% endif %}
     </div>
     <div class="product__attributes">
@@ -27,6 +31,10 @@ templateClass: tmpl-post
           {% if wood %}<dd>Especie: </dd><dt>{{ wood }}</dt>{% endif %}
           {% if condicion %}<dd>Condición: </dd><dt>{{ condicion }}</dt>{% endif %}
           {% if region %}<dd>Región: </dd><dt>{{ region }}</dt>{% endif %}
+          {% if origen %}<dd>Origen: </dd><dt>{{ origen }}</dt>{% endif %}
+          {% if clave %}<dd>Característica clave: </dd><dt>{{ clave }}</dt>{% endif %}
+
+
         </dl>
       </section>
       <section class="attribute">

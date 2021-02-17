@@ -73,6 +73,8 @@ collections:
       - {label: "Especie", name: "wood", widget: "string", required: false}
       - {label: "condicion", name: "condicion", widget: "string", required: false}
       - {label: "region", name: "region", widget: "string", required: false}
+      - {label: "Origen", name: "origen", widget: "string", required: false}
+      - {label: "Característica clave", name: "clave", widget: "string", required: false}
       - {label: "volumen", name: "volumen", widget: "string", required: false}
       - {label: "Altura", name: "height", widget: "string", required: false}
       - {label: "Grosor", name: "thickness", widget: "string", required: false}
@@ -107,6 +109,8 @@ collections:
       - {label: "Especie", name: "wood", widget: "string", required: false}
       - {label: "condicion", name: "condicion", widget: "string", required: false}
       - {label: "region", name: "region", widget: "string", required: false}
+      - {label: "Origen", name: "origen", widget: "string", required: false}
+      - {label: "Característica clave", name: "clave", widget: "string", required: false}
       - {label: "volumen", name: "volumen", widget: "string", required: false}
       - {label: "Altura", name: "height", widget: "string", required: false}
       - {label: "Grosor", name: "thickness", widget: "string", required: false}
