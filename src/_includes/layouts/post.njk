@@ -10,7 +10,11 @@ templateClass: tmpl-post
 <article class="page__content container">
   <div class="product">
     <div class="product__img">
-      {% image img, description, "600px"  %}
+      {% if img and description %}
+        {% image img, description, "600px"  %}
+      {% elseif img  %}
+        {% image img, title, "600px"  %}
+      {% endif %}
     </div>
     <div class="product__attributes">
       <section class="attribute">

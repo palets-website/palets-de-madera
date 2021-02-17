@@ -1,20 +1,15 @@
 
 <ol reversed class="prodlist" >
 {% for product in prodlist | reverse %}
-
-{#  {% set isPalets = collections.palets | getCollectionItem(product) %}#}
-{#  {% set isMadera = collections.madera | getCollectionItem(product) %}#}
-
   <li class="prodlist__item">
-{#    {% if isPalets %} I am Palets {% endif %}#}
-{#    {% if isMadera %} I am Madera {% endif %}#}
     <a href="{{ product.url | url }}" class="prodlist__link">
-          {% if product.data.img %}
+          {% if product.data.img and product.data.description%}
             {% image product.data.img, product.data.description, "300px"  %}
+          {% elif product.data.img %}
+            {% image product.data.img, product.data.title, "300px"  %}
           {% else %}
             <img src="{{ '/img/logo-bw.svg' | url }}", alt="{{ product.data.description }}" width="300" height="300" >
           {% endif %}
-
     </a>
     <a href="{{ product.url | url }}" class="prodlist__title-link">
       <h3 class="prodlist__title">{{ product.data.title }}</h3>
@@ -36,13 +31,7 @@
       {% endfor %}
     </ul>
     <p class="prodlist__text">{{ product.data.description }}</p>
-
     <a href="{{ product.url | url }}" class="prodlist__button button">Ver mas</a>
-
   </li>
 {% endfor %}
 </ol>
-
-{# example: #}
-{#{% set prodlist = collections.productos | head(-3) %}#}
-{#  {% include "prodlist.njk" %}#}
