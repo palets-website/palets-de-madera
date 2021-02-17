@@ -19,15 +19,6 @@ async function imageShortcode(src, alt, sizes) {
     formats: ["avif", "webp", "jpeg"],
     urlPath: "/img/",
     outputDir: "./_site/img",
-    cacheOptions: {
-      // if a remote image URL, this is the amount of time before it fetches a fresh copy
-      duration: "3y",
-
-      // project-relative path to the cache directory
-      directory: ".cache",
-
-      removeUrlQueryParams: false,
-    },
   });
 
   let imageAttributes = {
