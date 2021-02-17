@@ -87,8 +87,8 @@ collections:
       - {label: "vendePara", name: "vendePara", widget: "string", required: false}
       - {label: "date", name: "date", widget: "date", format: 'YYYY-MM-Do', required: false}
       - {label: "img", name: "img", widget: "string", required: false}
-      - {label: "Tags", name: "tags", widget: "list" }
-      - {label: "Полное описание", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false }
+      - {label: "Полное описание", name: "body", widget: "markdown", required: false}
 
   - name: "madera"
     label: "Древесина"
@@ -119,5 +119,5 @@ collections:
       - {label: "vendePara", name: "vendePara", widget: "string", required: false}
       - {label: "date", name: "date", widget: "date", format: 'YYYY-MM-Do', required: false}
       - {label: "img", name: "img", widget: "string", required: false}
-      - {label: "Tags", name: "tags", widget: "list" }
-      - {label: "Полное описание", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false }
+      - {label: "Полное описание", name: "body", widget: "markdown", required: false}
