@@ -63,6 +63,7 @@ collections:
     folder: "src/palets"
     create: true
     slug: "{{slug}}"
+    extension: md
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
       - {label: "Короткое описание", name: "description", widget: "string", required: false}
@@ -95,6 +96,7 @@ collections:
     label: "Древесина"
     folder: "src/madera"
     create: true
+    extension: md
     slug: "{{slug}}"
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
