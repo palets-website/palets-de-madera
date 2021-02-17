@@ -22,12 +22,12 @@ collections:
         name: "titles"
         file: "src/_data/titles.json"
         fields:
-          - {label: "Адреса", name: "addresses", widget: "string"}
-          - {label: "контакты", name: "contactos", widget: "string"}
-          - {label: "Преимущества", name: "benefits", widget: "string"}
-          - {label: "Товары", name: "products", widget: "string"}
-          - {label: "Нижнее меню", name: "footermenu", widget: "string"}
-          - {label: "над заголовоком", name: "subtitle", widget: "string"}
+          - {label: "Адреса", name: "addresses", widget: "string", required: false}
+          - {label: "контакты", name: "contactos", widget: "string", required: false}
+          - {label: "Преимущества", name: "benefits", widget: "string", required: false}
+          - {label: "Товары", name: "products", widget: "string", required: false}
+          - {label: "Нижнее меню", name: "footermenu", widget: "string", required: false}
+          - {label: "над заголовоком", name: "subtitle", widget: "string", required: false}
       - label: "Преимущества"
         name: "benefits"
         file: "src/_data/features.json"
@@ -36,57 +36,57 @@ collections:
             name: "items"
             widget: "list"
             fields:
-            - {label: "Заголовок", name: "title", widget: "string"}
-            - {label: "Подзаголовок", name: "subtitle", widget: "string"}
-            - {label: "текст", name: "text", widget: "string"}
+            - {label: "Заголовок", name: "title", widget: "string", required: false}
+            - {label: "Подзаголовок", name: "subtitle", widget: "string", required: false}
+            - {label: "текст", name: "text", widget: "string", required: false}
       - label: "Контакты"
         name: "contacts"
         file: "src/_data/contacts.json"
         fields:
-          - {label: "phone", name: "phone", widget: "string"}
-          - {label: "whatsapp", name: "whatsapp", widget: "string"}
-          - {label: "email", name: "email", widget: "string"}
+          - {label: "phone", name: "phone", widget: "string", required: false}
+          - {label: "whatsapp", name: "whatsapp", widget: "string", required: false}
+          - {label: "email", name: "email", widget: "string", required: false}
           - label: "Филиал 1"
             name: "filial_1"
             widget: "object"
             fields:
-              - {label: "Город", name: "city", widget: "string"}
-              - {label: "Адрес", name: "address", widget: "string"}
+              - {label: "Город", name: "city", widget: "string", required: false}
+              - {label: "Адрес", name: "address", widget: "string", required: false}
           - label: "Филиал 2"
             name: "filial_2"
             widget: "object"
             fields:
-              - {label: "Город", name: "city", widget: "string"}
-              - {label: "Адрес", name: "address", widget: "string"}
+              - {label: "Город", name: "city", widget: "string", required: false}
+              - {label: "Адрес", name: "address", widget: "string", required: false}
   - name: "palets"
     label: "Палеты"
     folder: "src/palets"
     create: true
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Короткое описание", name: "description", widget: "string"}
-      - {label: "tipo", name: "tipo", widget: "string"}
-      - {label: "uso", name: "uso", widget: "string"}
-      - {label: "Tipo de especies", name: "woodtype", widget: "string"}
-      - {label: "Especie", name: "wood", widget: "string"}
-      - {label: "condicion", name: "condicion", widget: "string"}
-      - {label: "region", name: "region", widget: "string"}
-      - {label: "volumen", name: "volumen", widget: "string"}
-      - {label: "Altura", name: "height", widget: "string"}
-      - {label: "Grosor", name: "thickness", widget: "string"}
-      - {label: "Ancho", name: "width", widget: "string"}
-      - {label: "Largo", name: "length", widget: "string"}
-      - {label: "Marca", name: "mark", widget: "string"}
-      - {label: "tablas de capa superior", name: "board", widget: "string"}
-      - {label: "tablas transversales", name: "traverse", widget: "string"}
-      - {label: "Sistema", name: "system", widget: "string"}
-      - {label: "calidad", name: "calidad", widget: "string"}
-      - {label: "desecado", name: "desecado", widget: "string"}
-      - {label: "price", name: "price", widget: "string"}
-      - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string"}
-      - {label: "vendePara", name: "vendePara", widget: "string"}
-      - {label: "date", name: "date", widget: "string"}
-      - {label: "img", name: "img", widget: "string"}
+      - {label: "Короткое описание", name: "description", widget: "string", required: false}
+      - {label: "tipo", name: "tipo", widget: "string", required: false}
+      - {label: "uso", name: "uso", widget: "string", required: false}
+      - {label: "Tipo de especies", name: "woodtype", widget: "string", required: false}
+      - {label: "Especie", name: "wood", widget: "string", required: false}
+      - {label: "condicion", name: "condicion", widget: "string", required: false}
+      - {label: "region", name: "region", widget: "string", required: false}
+      - {label: "volumen", name: "volumen", widget: "string", required: false}
+      - {label: "Altura", name: "height", widget: "string", required: false}
+      - {label: "Grosor", name: "thickness", widget: "string", required: false}
+      - {label: "Ancho", name: "width", widget: "string", required: false}
+      - {label: "Largo", name: "length", widget: "string", required: false}
+      - {label: "Marca", name: "mark", widget: "string", required: false}
+      - {label: "tablas de capa superior", name: "board", widget: "string", required: false}
+      - {label: "tablas transversales", name: "traverse", widget: "string", required: false}
+      - {label: "Sistema", name: "system", widget: "string", required: false}
+      - {label: "calidad", name: "calidad", widget: "string", required: false}
+      - {label: "desecado", name: "desecado", widget: "string", required: false}
+      - {label: "price", name: "price", widget: "string", required: false}
+      - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string", required: false}
+      - {label: "vendePara", name: "vendePara", widget: "string", required: false}
+      - {label: "date", name: "date", widget: "date", format: 'YYYY-MM-Do', required: false}
+      - {label: "img", name: "img", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "list" }
       - {label: "Полное описание", name: "body", widget: "markdown"}
 
@@ -96,28 +96,28 @@ collections:
     create: true
     fields:
       - {label: "Заголовок", name: "title", widget: "string"}
-      - {label: "Короткое описание", name: "description", widget: "string"}
-      - {label: "tipo", name: "tipo", widget: "string"}
-      - {label: "uso", name: "uso", widget: "string"}
-      - {label: "Tipo de especies", name: "woodtype", widget: "string"}
-      - {label: "Especie", name: "wood", widget: "string"}
-      - {label: "condicion", name: "condicion", widget: "string"}
-      - {label: "region", name: "region", widget: "string"}
-      - {label: "volumen", name: "volumen", widget: "string"}
-      - {label: "Altura", name: "height", widget: "string"}
-      - {label: "Grosor", name: "thickness", widget: "string"}
-      - {label: "Ancho", name: "width", widget: "string"}
-      - {label: "Largo", name: "length", widget: "string"}
-      - {label: "Marca", name: "mark", widget: "string"}
-      - {label: "tablas de capa superior", name: "board", widget: "string"}
-      - {label: "tablas transversales", name: "traverse", widget: "string"}
-      - {label: "Sistema", name: "system", widget: "string"}
-      - {label: "calidad", name: "calidad", widget: "string"}
-      - {label: "desecado", name: "desecado", widget: "string"}
-      - {label: "price", name: "price", widget: "string"}
-      - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string"}
-      - {label: "vendePara", name: "vendePara", widget: "string"}
-      - {label: "date", name: "date", widget: "string"}
-      - {label: "img", name: "img", widget: "string"}
+      - {label: "Короткое описание", name: "description", widget: "string", required: false}
+      - {label: "tipo", name: "tipo", widget: "string", required: false}
+      - {label: "uso", name: "uso", widget: "string", required: false}
+      - {label: "Tipo de especies", name: "woodtype", widget: "string", required: false}
+      - {label: "Especie", name: "wood", widget: "string", required: false}
+      - {label: "condicion", name: "condicion", widget: "string", required: false}
+      - {label: "region", name: "region", widget: "string", required: false}
+      - {label: "volumen", name: "volumen", widget: "string", required: false}
+      - {label: "Altura", name: "height", widget: "string", required: false}
+      - {label: "Grosor", name: "thickness", widget: "string", required: false}
+      - {label: "Ancho", name: "width", widget: "string", required: false}
+      - {label: "Largo", name: "length", widget: "string", required: false}
+      - {label: "Marca", name: "mark", widget: "string", required: false}
+      - {label: "tablas de capa superior", name: "board", widget: "string", required: false}
+      - {label: "tablas transversales", name: "traverse", widget: "string", required: false}
+      - {label: "Sistema", name: "system", widget: "string", required: false}
+      - {label: "calidad", name: "calidad", widget: "string", required: false}
+      - {label: "desecado", name: "desecado", widget: "string", required: false}
+      - {label: "price", name: "price", widget: "string", required: false}
+      - {label: "fechaDeEntrega", name: "fechaDeEntrega", widget: "string", required: false}
+      - {label: "vendePara", name: "vendePara", widget: "string", required: false}
+      - {label: "date", name: "date", widget: "date", format: 'YYYY-MM-Do', required: false}
+      - {label: "img", name: "img", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "list" }
       - {label: "Полное описание", name: "body", widget: "markdown"}
